@@ -325,8 +325,6 @@ const REQUIRED_SOCIAL_META = [
   ['property', 'og:image'],
   ['property', 'og:image:alt'],
   ['name', 'twitter:card'],
-  ['name', 'twitter:site'],
-  ['name', 'twitter:creator'],
   ['name', 'twitter:title'],
   ['name', 'twitter:description'],
   ['name', 'twitter:image'],

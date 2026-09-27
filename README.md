@@ -1,16 +1,16 @@
 # V Sri Charan Reddy: Personal Site
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/vsricharan16/charan.github.io/node.js.yml?branch=main)](https://github.com/vsricharan16/charan.github.io/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/vsricharan16/vsricharan16.github.io/node.js.yml?branch=main)](https://github.com/vsricharan16/vsricharan16.github.io/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-Portfolio, résumé, and writing site for [V Sri Charan Reddy](https://vsricharan16.github.io/charan.github.io/), built with
+Portfolio, résumé, and writing site for [V Sri Charan Reddy](https://vsricharan16.github.io), built with
 [Next.js](https://nextjs.org/), [React](https://react.dev/),
 [TypeScript](https://www.typescriptlang.org/), and
 [Tailwind CSS](https://tailwindcss.com/).
 
 Forked from [mldangelo/personal-site](https://github.com/mldangelo/personal-site) and rebranded.
 
-**[Visit the live site →](https://vsricharan16.github.io/charan.github.io/)**
+**[Visit the live site →](https://vsricharan16.github.io)**
 
 ## What is here
 
@@ -25,8 +25,8 @@ Forked from [mldangelo/personal-site](https://github.com/mldangelo/personal-site
 With [nvm](https://github.com/nvm-sh/nvm) installed:
 
 ```bash
-git clone https://github.com/vsricharan16/charan.github.io.git
-cd charan.github.io
+git clone https://github.com/vsricharan16/vsricharan16.github.io.git
+cd vsricharan16.github.io
 nvm install
 npm ci
 npm run dev
