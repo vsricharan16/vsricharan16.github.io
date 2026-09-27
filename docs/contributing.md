@@ -26,7 +26,8 @@ managers can use any release accepted by `engines.node` in `package.json`.
 Create a topic branch rather than committing to `main`. Use a
 [Conventional Commit](https://www.conventionalcommits.org/) prefix such as
 `feat:`, `fix:`, `refactor:`, `docs:`, or `chore:`. Use the same format for the
-pull request title so the merged history stays consistent.
+pull request title so the merged history stays consistent. After GitHub merges
+the pull request, delete the topic branch on the remote and locally.
 
 ## Validate the change
 
