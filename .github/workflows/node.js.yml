@@ -1,5 +1,7 @@
 name: CI
 
+# GitHub Pages for this fork is published by this workflow, not by the
+# default Jekyll README build that user-site repos enable automatically.
 on:
   push:
     branches: [main]

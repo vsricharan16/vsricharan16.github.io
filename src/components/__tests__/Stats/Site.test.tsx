@@ -66,7 +66,7 @@ describe('Site', () => {
     await Site();
 
     expect(global.fetch).toHaveBeenCalledWith(
-      'https://api.github.com/repos/vsricharan16/personal-site',
+      'https://api.github.com/repos/vsricharan16/charan.github.io',
       expect.objectContaining({
         headers: expect.objectContaining({
           Accept: 'application/vnd.github.v3+json',
@@ -80,7 +80,7 @@ describe('Site', () => {
     render(Component);
 
     const links = document.querySelectorAll(
-      'a[href="https://github.com/vsricharan16/personal-site/stargazers"]',
+      'a[href="https://github.com/vsricharan16/charan.github.io/stargazers"]',
     );
     expect(links.length).toBeGreaterThan(0);
   });

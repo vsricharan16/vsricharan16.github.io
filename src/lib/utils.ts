@@ -5,10 +5,10 @@
 import profile from '@/data/profile.json';
 
 // Site configuration
-export const SITE_URL = 'https://vsricharan16.github.io';
+export const SITE_URL = 'https://vsricharan16.github.io/charan.github.io';
 export const AUTHOR_NAME = profile.name;
 export const GITHUB_USER = 'vsricharan16';
-export const GITHUB_REPO = `${GITHUB_USER}/personal-site`;
+export const GITHUB_REPO = `${GITHUB_USER}/charan.github.io`;
 export const GITHUB_PROFILE_URL = `https://github.com/${GITHUB_USER}`;
 export const GITHUB_REPO_URL = `https://github.com/${GITHUB_REPO}`;
 export const TWITTER_HANDLE = '';
