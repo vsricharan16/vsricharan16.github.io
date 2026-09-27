@@ -60,6 +60,7 @@ docs/                 → Documentation
 - Make small, frequent conventional commits as you go (e.g., `feat:`, `fix:`, `refactor:`)
 - Push to your remote branch after every commit to keep it in sync
 - Land changes on `main` by merging GitHub PRs with conventional-commit titles (deploys trigger automatically from these merges)
+- After a PR merges, delete the topic branch on the remote and locally. Do not leave merged feature branches open
 - If multiple PRs need to land together, open an integration branch PR; do not locally merge into `main`
 - Treat `main` as protected: force-pushes and history rewrites require explicit user approval
 
