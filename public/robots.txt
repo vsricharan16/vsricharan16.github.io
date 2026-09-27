@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /api
 
-Sitemap: https://vsricharan16.github.io/charan.github.io/sitemap.xml
+Sitemap: https://vsricharan16.github.io/sitemap.xml
