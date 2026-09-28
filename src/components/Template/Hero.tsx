@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="hero-grid">
         <div className="hero-primary">
           <h1 className="hero-title">
-            <span className="hero-name">{profile.name}</span>
+            <span className="hero-name">{profile.givenName}</span>
           </h1>
 
           <p className="hero-tagline">
@@ -23,18 +23,12 @@ export default function Hero() {
             >
               {profile.employer}
             </a>
-            , working on{' '}
-            <a
-              href="https://www.nutanix.com/products/cloud-platform"
-              className="hero-highlight"
-              {...newTabProps(
-                'https://www.nutanix.com/products/cloud-platform',
-              )}
-            >
-              Core Data Path
-            </a>
-            . I build petabyte-scale storage control planes and high-concurrency
-            systems in C++ and gRPC.
+            , working at the intersection of distributed systems and storage. I
+            tackle hard engineering problems to build petabyte-scale storage
+            control planes and highly concurrent architectures where high
+            throughput and ultra-low latency are critical. Whether I&apos;m
+            designing massive systems or just tinkering on my own time, I&apos;m
+            a C++ enthusiast at heart.
           </p>
 
           <div className="hero-cta">

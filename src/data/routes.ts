@@ -5,6 +5,8 @@ export interface Route {
   path: string;
   index?: boolean;
   primary?: boolean;
+  /** When false, the page stays in the repo but is omitted from nav and footer. */
+  listed?: boolean;
 }
 
 const routes: Route[] = [
@@ -25,20 +27,27 @@ const routes: Route[] = [
     label: 'Writing',
     path: '/writing',
   },
+  // Parked: a stats page is a poor fit for this professional site.
   {
     label: 'Stats',
     path: '/stats',
-    primary: false,
+    listed: false,
   },
   {
     label: 'Contact',
     path: '/contact',
   },
+  // Parked until the student-project archive is polished.
   {
     label: 'Archive',
     path: '/projects',
     primary: false,
+    listed: false,
   },
 ];
+
+export function isListedRoute(route: Route): boolean {
+  return route.listed !== false;
+}
 
 export default routes;

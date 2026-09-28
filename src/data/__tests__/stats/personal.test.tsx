@@ -1,7 +1,6 @@
-import { act, render } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import data from '../../stats/personal';
+import data, { Age } from '../../stats/personal';
 
 describe('personal stats data', () => {
   beforeEach(() => {
@@ -25,13 +24,10 @@ describe('personal stats data', () => {
     }
   });
 
-  it('has an age stat with a React component', () => {
+  it('does not export the age stat while birthday is hidden', () => {
     const ageStat = data.find((s) => s.key === 'age');
 
-    expect(ageStat).toBeDefined();
-    expect(ageStat!.label).toBe('Current age');
-    // Age value is a React element
-    expect(ageStat!.value).toBeDefined();
+    expect(ageStat).toBeUndefined();
   });
 
   it('has a countries visited stat', () => {
@@ -51,19 +47,7 @@ describe('personal stats data', () => {
     expect(locationStat!.value).toBe('San Jose, CA');
   });
 
-  it('Age component renders and updates', () => {
-    const ageStat = data.find((s) => s.key === 'age');
-    const AgeComponent = () => <>{ageStat!.value}</>;
-
-    render(<AgeComponent />);
-
-    // Advance timer to trigger age calculation
-    act(() => {
-      vi.advanceTimersByTime(50);
-    });
-
-    // The age should be a number with decimal places
-    const textContent = document.body.textContent || '';
-    expect(textContent).toMatch(/\d+\.\d+/);
+  it('keeps Age available for later without ticking it on the page', () => {
+    expect(Age).toBeTypeOf('function');
   });
 });

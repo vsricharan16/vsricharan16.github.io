@@ -70,10 +70,10 @@ describe('Degree', () => {
     expect(link).toHaveAttribute('target', '_blank');
   });
 
-  it('displays year', () => {
+  it('does not display the graduation year', () => {
     render(<Degree data={mockDegree} />);
 
-    expect(screen.getByText(/2020/)).toBeInTheDocument();
+    expect(screen.queryByText(/2020/)).not.toBeInTheDocument();
   });
 
   it('renders as article element', () => {

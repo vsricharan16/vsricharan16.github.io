@@ -4,7 +4,7 @@
    ======================================== */
 
 @layer components {
-  /* Filter switches — squared, mono, and unlit until selected. */
+  /* Filter switches — squared, unlit until selected. */
   .skillbutton {
     appearance: none;
     background-color: transparent;
@@ -13,11 +13,11 @@
     color: var(--color-fg-light);
     cursor: pointer;
     display: inline-block;
-    font-family: var(--font-mono);
+    font-family: var(--font-body);
     font-size: var(--text-ui);
     font-weight: var(--font-weight-medium);
-    letter-spacing: var(--tracking-label);
-    text-transform: uppercase;
+    letter-spacing: var(--tracking-normal);
+    text-transform: none;
     min-height: 2.75rem;
     padding: 0.4em 0.7em;
     transition:

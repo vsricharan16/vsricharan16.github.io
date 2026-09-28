@@ -23,7 +23,7 @@ import {
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Resume',
-  description: `${AUTHOR_NAME}'s Resume. Nutanix Core Data Path, Amazon, Sprinklr, UC Irvine, IIT Hyderabad.`,
+  description: `${AUTHOR_NAME}'s Resume. Nutanix Core Data Path, Amazon, Sprinklr, Samsung R&D, UC Irvine, IIT Hyderabad.`,
   path: '/resume/',
 });
 

@@ -22,7 +22,7 @@ const work: Position[] = [
     summary: `Building petabyte-scale storage control planes and data-path infrastructure in C++, gRPC, and high-concurrency systems that serve millions of clients with low latency.`,
     highlights: [
       'Engineered core distributed MapReduce control plane services, orchestrating storage workflows including deduplication, replication, and garbage collection across dense multi-node clusters.',
-      'Led a team of 4 engineers through the end-to-end design and cross-functional delivery of an array-agnostic storage lifecycle workflow for external enterprise arrays (Pure, Dell), unlocking $XXM+ in new revenue.',
+      'Led a team of 4 engineers through the end-to-end design and cross-functional delivery of an array-agnostic storage lifecycle workflow for external enterprise arrays (Pure, Dell).',
       'Set the technical direction to stabilize the disaggregated storage stack by resolving critical outages in customer and test environments, incorporating dynamic thresholds to achieve steady state 10x faster.',
       'Restored critical erasure-coding savings on dense clusters by introducing priority-aware, selective metadata scans, eliminating arbitrary task cancellations that caused an 85% task drop rate.',
       'Built a highly resilient storage monitoring service leveraging async requests, caching, and batched API calls, aggregating telemetry data across infrastructure levels to provide accurate reporting and dynamic capacity alerts.',
@@ -71,8 +71,37 @@ const work: Position[] = [
     endDate: '2021-09-01',
     summary: `Built alerting and autoscaling for high-volume customer-experience infrastructure.`,
     highlights: [
-      'Designed and implemented an automated Alert Manager detecting message volume anomalies, broadcasting over 4,000 tailored insights daily and cutting manual monitoring by 90%.',
-      'Built an autoscaling mechanism for core alert services, reducing annual infrastructure cost by $135K while slashing customer support call volume by 80%.',
+      'Designed and implemented an automated Alert Manager detecting message volume anomalies, broadcasting ~4,000 tailored insights daily and cutting manual monitoring by 90%.',
+      'Developed CRON jobs to ingest data from two new media sources (Podcast and Classifieds) into Sprinklr’s distributed databases, reducing latency by 3 minutes.',
+      'Implemented a Research Adoption metrics service pipeline with 99.9% uptime to identify features that drive revenue.',
+      'Owned end-to-end development and re-architecture of alert dashboards, reducing support call volume by 80%.',
+      'Developed an autoscaling mechanism for Alert Manager services, reducing annual infrastructure cost by $135K.',
+    ],
+  },
+  {
+    name: 'Samsung R&D Bangalore',
+    position: 'Software Developer Intern, Networks',
+    url: 'https://research.samsung.com',
+    logo: '/images/companies/samsung.svg',
+    startDate: '2019-05-01',
+    endDate: '2019-07-01',
+    summary: `Built a dockerized simulator for 4G and 5G radio-unit testing.`,
+    highlights: [
+      'Designed and implemented a generic simulator in a dockerized environment for testing communication between the Data Unit (DU) and the Radio Unit (RRH) for Samsung 4G and 5G networking devices.',
+      'The prototype had more than 92% test coverage.',
+    ],
+  },
+  {
+    name: 'IIT Hyderabad',
+    position: 'Research Intern, Software Defined Networks',
+    url: 'https://www.iith.ac.in',
+    logo: '/images/companies/iith.png',
+    startDate: '2017-07-01',
+    endDate: '2018-05-01',
+    summary: `Studied routing and utilization in software-defined networks.`,
+    highlights: [
+      'Simulated test-bed environments using VyOS to study routing protocols.',
+      'Developed a network monitoring tool to predict network utilization in a software-defined network, with 86% accuracy across topologies.',
     ],
   },
 ];

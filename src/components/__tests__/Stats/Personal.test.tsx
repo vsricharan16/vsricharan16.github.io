@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Personal from '../../Stats/Personal';
@@ -18,10 +18,10 @@ describe('Personal', () => {
     expect(screen.getByRole('table')).toBeInTheDocument();
   });
 
-  it('displays the current age label', () => {
+  it('does not display current age', () => {
     render(<Personal />);
 
-    expect(screen.getByText('Current age')).toBeInTheDocument();
+    expect(screen.queryByText('Current age')).not.toBeInTheDocument();
   });
 
   it('displays countries visited', () => {
@@ -44,19 +44,10 @@ describe('Personal', () => {
     expect(screen.queryByRole('link', { name: /2/i })).not.toBeInTheDocument();
   });
 
-  it('updates age over time', async () => {
+  it('does not tick age on the stats page', () => {
     render(<Personal />);
 
-    // Get initial age text
-    const ageCell = screen.getByText('Current age').closest('tr');
-    expect(ageCell).toBeInTheDocument();
-
-    // Advance timer to trigger age update
-    act(() => {
-      vi.advanceTimersByTime(50);
-    });
-
-    // Age should still be displayed (value changes but component renders)
-    expect(screen.getByText('Current age')).toBeInTheDocument();
+    expect(screen.queryByText('Current age')).not.toBeInTheDocument();
+    expect(document.querySelector('.stat-live')).not.toBeInTheDocument();
   });
 });

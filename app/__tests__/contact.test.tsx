@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import profile from '@/data/profile.json';
 import ContactPage from '../contact/page';
 
 describe('contact page', () => {
@@ -9,6 +10,8 @@ describe('contact page', () => {
 
     expect(screen.getByRole('main')).toHaveClass('page-main--contact');
     expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
-    expect(screen.getAllByRole('link', { name: /^Email/ })).toHaveLength(1);
+    expect(
+      screen.getAllByRole('link', { name: profile.email }),
+    ).toHaveLength(1);
   });
 });

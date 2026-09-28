@@ -65,11 +65,20 @@ describe('routes', () => {
     }
   });
 
+  it('keeps stats and archive routes unlisted', () => {
+    const unlisted = routes.filter((route) => route.listed === false);
+
+    expect(unlisted.map((route) => route.path)).toEqual([
+      '/stats',
+      '/projects',
+    ]);
+  });
+
   it('keeps secondary destinations out of the primary navigation', () => {
     const secondaryPaths = routes
       .filter((route) => route.primary === false)
       .map((route) => route.path);
 
-    expect(secondaryPaths).toEqual(['/stats', '/projects']);
+    expect(secondaryPaths).toEqual(['/projects']);
   });
 });

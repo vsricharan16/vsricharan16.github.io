@@ -44,12 +44,12 @@ export default function Job({ data, tier = 'primary' }: JobProps) {
       <div className="job-body">
         <header className="job-header">
           {logo ? (
-            // biome-ignore lint/performance/noImgElement: Static export; avoid next/image runtime for a 32px mark.
+            // biome-ignore lint/performance/noImgElement: Static export; avoid next/image runtime for a small mark.
             <img
               src={logo}
               alt=""
-              width={32}
-              height={32}
+              width={48}
+              height={48}
               className="job-logo"
             />
           ) : null}

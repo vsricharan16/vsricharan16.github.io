@@ -16,7 +16,7 @@ import type { StatData } from '../../components/Stats/types';
  * The placeholder is the rendered content; `useLiveAge` writes the reading into
  * this node directly, so the ticking never re-renders React.
  */
-function Age() {
+export function Age() {
   const ref = useLiveAge<HTMLSpanElement>(AGE_PRECISION_FULL);
 
   return (
@@ -26,12 +26,19 @@ function Age() {
   );
 }
 
+// Hidden for privacy. Flip this when a real birth date is set.
+const SHOW_AGE = false;
+
 const data: StatData[] = [
-  {
-    key: 'age',
-    label: 'Current age',
-    value: <Age />,
-  },
+  ...(SHOW_AGE
+    ? [
+        {
+          key: 'age',
+          label: 'Current age',
+          value: <Age />,
+        } satisfies StatData,
+      ]
+    : []),
   {
     key: 'countries',
     label: 'Countries visited',

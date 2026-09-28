@@ -23,11 +23,10 @@
   line-height: 1;
 }
 
-/* Nav labels are instrument annotation, not prose:
-   mono, uppercase, wide-tracked, and small. */
+/* Nav labels use the same face as the page, not a second instrument font. */
 .nav-links {
   display: none;
-  gap: 1.75rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -40,11 +39,11 @@
 .nav-link {
   position: relative;
   padding: 0.5rem 0;
-  font-family: var(--font-mono);
-  font-size: var(--text-ui);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-fg-light);
   text-decoration: none;
   background-image: none;

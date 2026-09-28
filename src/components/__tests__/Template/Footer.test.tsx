@@ -16,7 +16,7 @@ describe('Footer', () => {
 
     expect(screen.getByText('V Sri Charan Reddy')).toBeInTheDocument();
     expect(
-      screen.getByText('Member of Technical Staff, Core Data Path at Nutanix'),
+      screen.getByText('Member of Technical Staff, Nutanix'),
     ).toBeInTheDocument();
   });
 
@@ -46,16 +46,20 @@ describe('Footer', () => {
       'href',
       '/resume',
     );
-    // Labelled "Archive" to match the nav and the page's own heading;
-    // the route stays /projects.
-    expect(screen.getByRole('link', { name: /archive/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /writing/i })).toHaveAttribute(
       'href',
-      '/projects',
+      '/writing',
     );
     expect(screen.getByRole('link', { name: /contact/i })).toHaveAttribute(
       'href',
       '/contact',
     );
+    expect(
+      screen.queryByRole('link', { name: /stats/i }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('link', { name: /archive/i }),
+    ).not.toBeInTheDocument();
   });
 
   it('renders contact icons section', () => {
@@ -72,5 +76,13 @@ describe('Footer', () => {
 
     const avatarLink = document.querySelector('.footer-avatar');
     expect(avatarLink).toHaveAttribute('href', '/');
+  });
+
+  it('does not link to the source repository', () => {
+    render(<Footer />);
+
+    expect(
+      screen.queryByRole('link', { name: /source/i }),
+    ).not.toBeInTheDocument();
   });
 });

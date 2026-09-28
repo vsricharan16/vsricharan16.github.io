@@ -85,6 +85,10 @@ describe('page metadata', () => {
     expect(notFoundMetadata.alternates?.canonical).toBeUndefined();
   });
 
+  it('keeps the unlisted stats page out of search indexes', () => {
+    expect(statsMetadata.robots).toEqual({ index: false, follow: false });
+  });
+
   it('keeps the RSS alternate alongside the canonical on the writing index', () => {
     expect(writingMetadata.alternates?.types).toEqual({
       'application/rss+xml': '/feed.xml',

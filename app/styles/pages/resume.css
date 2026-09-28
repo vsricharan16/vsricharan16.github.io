@@ -2,8 +2,7 @@
    RESUME PAGE STYLES
    ======================================== */
 
-/* Section headers match About: display type under a heavy rule, not
-   a second set of tiny nav labels. */
+/* Section headers use the same face as the section index. */
 .resume-page .education .title,
 .resume-page .experience .title,
 .resume-page .skills .title,
@@ -18,11 +17,11 @@
 .resume-page .skills .title h2,
 .resume-page .courses .title h2,
 .resume-page .references .title h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
   line-height: 1.15;
-  letter-spacing: var(--tracking-display);
+  letter-spacing: var(--tracking-tight);
   text-transform: none;
   color: var(--color-fg-bold);
   display: block;
@@ -74,7 +73,7 @@
   margin: 0;
 }
 
-/* Section index — a row of mono labels on a rule, not a pill bar. */
+/* Section index — same face as the headings it jumps to. */
 .resume-nav {
   display: flex;
   flex-wrap: wrap;
@@ -104,11 +103,11 @@
 .resume-nav-link {
   position: relative;
   padding: 0.25rem 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--text-ui);
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-fg-light);
   background: transparent;
   background-image: none;
