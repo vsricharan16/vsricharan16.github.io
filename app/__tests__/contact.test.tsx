@@ -10,8 +10,8 @@ describe('contact page', () => {
 
     expect(screen.getByRole('main')).toHaveClass('page-main--contact');
     expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
-    expect(
-      screen.getAllByRole('link', { name: profile.email }),
-    ).toHaveLength(1);
+    expect(screen.getAllByRole('link', { name: profile.email })).toHaveLength(
+      1,
+    );
   });
 });
