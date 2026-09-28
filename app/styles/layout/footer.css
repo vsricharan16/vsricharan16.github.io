@@ -11,11 +11,11 @@
   margin-top: auto;
 }
 
-/* Footer content - 2-column signature card layout */
+/* Footer content — identity, explore, and connect as three even columns. */
 .footer-content {
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--measure-page);
+  max-width: var(--measure-wide);
   padding-inline: 2rem;
   margin: 0 auto;
   display: flex;
@@ -33,12 +33,23 @@
 
 @media screen and (min-width: 900px) {
   .footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
     text-align: left;
     gap: 3rem;
+  }
+
+  .footer-identity {
+    justify-self: start;
+  }
+
+  .footer-links {
+    justify-self: center;
+  }
+
+  .footer-social {
+    justify-self: end;
   }
 }
 
@@ -53,20 +64,6 @@
   .footer-identity {
     flex-direction: column;
     align-items: center;
-  }
-}
-
-/* Right column - Nav and social */
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-@media screen and (min-width: 900px) {
-  .footer-right {
-    flex-direction: row;
-    gap: 3rem;
   }
 }
 
@@ -113,21 +110,11 @@
 }
 
 .footer-copyright {
-  font-family: var(--font-mono);
-  font-size: var(--text-2xs);
-  letter-spacing: var(--tracking-wide);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-normal);
   color: var(--color-fg-light);
   margin: 0.75rem 0 0;
-}
-
-.footer-copyright a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-.footer-copyright a:hover {
-  color: var(--color-accent);
 }
 
 /* Footer links section */
@@ -139,12 +126,12 @@
 
 .footer-links-label,
 .footer-social-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-2xs);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-fg-light);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
+  text-transform: none;
+  letter-spacing: var(--tracking-normal);
   margin-bottom: 0.25rem;
 }
 
@@ -186,7 +173,7 @@
   /* Wraps rather than forcing a 400px row into a 320px viewport. */
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 0.25rem;
+  gap: 1rem;
   margin-bottom: 0;
 }
 
@@ -232,11 +219,6 @@
     flex-direction: row;
     align-items: center;
     text-align: left;
-  }
-
-  .footer-right {
-    width: 100%;
-    gap: 1.25rem;
   }
 
   .footer-links {

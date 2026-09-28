@@ -42,12 +42,12 @@ describe('Courses', () => {
     expect(screen.getByText('Algorithms')).toBeInTheDocument();
   });
 
-  it('renders course numbers', () => {
+  it('does not render course numbers', () => {
     render(<Courses data={mockCourses} />);
 
-    expect(screen.getByText(/CS 229/)).toBeInTheDocument();
-    expect(screen.getByText(/CS 230/)).toBeInTheDocument();
-    expect(screen.getByText(/CS 161/)).toBeInTheDocument();
+    expect(screen.queryByText(/CS 229/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/CS 230/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/CS 161/)).not.toBeInTheDocument();
   });
 
   it('renders courses as list items', () => {
@@ -60,16 +60,16 @@ describe('Courses', () => {
     expect(items.length).toBe(mockCourses.length);
   });
 
-  it('sorts courses by university then number', () => {
-    const unsortedCourses = [mockCourses[2], mockCourses[1], mockCourses[0]];
+  it('keeps the given course order', () => {
+    const listed = [mockCourses[2], mockCourses[1], mockCourses[0]];
 
-    render(<Courses data={unsortedCourses} />);
+    render(<Courses data={listed} />);
 
     const items = screen.getAllByRole('listitem');
     expect(items.map((item) => item.textContent)).toEqual([
-      'CS 229:Machine Learning',
-      'CS 230:Deep Learning',
-      'CS 161:Algorithms',
+      'Algorithms',
+      'Deep Learning',
+      'Machine Learning',
     ]);
   });
 
@@ -97,11 +97,11 @@ describe('Course', () => {
     university: 'Stanford',
   };
 
-  it('renders course number and title', () => {
+  it('renders the course title without a catalog code', () => {
     render(<Course data={mockCourse} />);
 
-    expect(screen.getByText(/CS 229/)).toBeInTheDocument();
     expect(screen.getByText('Machine Learning')).toBeInTheDocument();
+    expect(screen.queryByText(/CS 229/)).not.toBeInTheDocument();
   });
 
   it('renders course as link', () => {

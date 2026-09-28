@@ -71,11 +71,8 @@ interface ParsedAboutSection {
  */
 const sectionVariants: Record<string, string> = {
   'Some History': 'about-section--log',
-  'Travel / Geography': 'about-section--log',
   'Fun Facts': 'about-section--compact',
   'I Like': 'about-section--compact',
-  'I Dream Of': 'about-section--compact',
-  'Websites from People I Admire': 'about-section--links',
 };
 
 function splitAboutMarkdown(markdown: string) {
@@ -170,14 +167,7 @@ export default function AboutContent({ markdown }: AboutContentProps) {
           key={section.id}
           className={getSectionClassName(section.title)}
         >
-          <h2 id={section.id}>
-            <a href={`#${section.id}`} className="about-section-heading-link">
-              <span>{section.title}</span>
-              <span className="about-section-heading-hash" aria-hidden="true">
-                #
-              </span>
-            </a>
-          </h2>
+          <h2 id={section.id}>{section.title}</h2>
           {isLogSection(section.title) ? (
             <Markdown options={LOG_MARKDOWN_OPTIONS}>{section.body}</Markdown>
           ) : (

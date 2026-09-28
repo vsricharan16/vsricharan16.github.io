@@ -14,9 +14,11 @@ describe('sitemap', () => {
         expect.objectContaining({ url: `${SITE_URL}/resume/` }),
         expect.objectContaining({ url: `${SITE_URL}/projects/` }),
         expect.objectContaining({ url: `${SITE_URL}/writing/` }),
-        expect.objectContaining({ url: `${SITE_URL}/stats/` }),
         expect.objectContaining({ url: `${SITE_URL}/contact/` }),
       ]),
+    );
+    expect(entries.map((entry) => entry.url)).not.toContain(
+      `${SITE_URL}/stats/`,
     );
   });
 

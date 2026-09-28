@@ -24,22 +24,14 @@ describe('about data', () => {
     expect(aboutMarkdown).toContain('Distributed systems');
   });
 
-  it('contains the travel section', () => {
-    expect(aboutMarkdown).toContain('# Travel / Geography');
-    expect(aboutMarkdown).toContain('San Jose');
-  });
-
   it('contains the fun facts section', () => {
     expect(aboutMarkdown).toContain('# Fun Facts');
   });
 
-  it('contains the dreams section', () => {
-    expect(aboutMarkdown).toContain('# I Dream Of');
-    expect(aboutMarkdown).toContain('Staying curious');
-  });
-
-  it('contains the admired websites section', () => {
-    expect(aboutMarkdown).toContain('# Websites from People I Admire');
+  it('omits travel, dreams, and admired-website leftover sections', () => {
+    expect(aboutMarkdown).not.toContain('# Travel / Geography');
+    expect(aboutMarkdown).not.toContain('# I Dream Of');
+    expect(aboutMarkdown).not.toContain('# Websites from People I Admire');
   });
 
   it('contains valid markdown links', () => {
@@ -55,6 +47,6 @@ describe('about data', () => {
     const headers = aboutMarkdown.match(headerRegex);
 
     expect(headers).not.toBeNull();
-    expect(headers!.length).toBeGreaterThan(5);
+    expect(headers!.length).toBeGreaterThan(3);
   });
 });

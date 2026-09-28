@@ -49,6 +49,9 @@ build/Release/
 .DS_Store
 Thumbs.db
 
+# Local polish checklist — keep off the public repo
+TODO.md
+
 # Misc
 .grunt/
 .lock-wscript

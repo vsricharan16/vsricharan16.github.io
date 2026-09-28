@@ -14,7 +14,8 @@ const degrees: Degree[] = [
   },
   {
     school: 'IIT Hyderabad',
-    degree: 'Bachelor of Technology in Computer Science, Minor in Design',
+    degree:
+      'Bachelor of Technology in Computer Science & Engineering, Minor in Design',
     link: 'https://www.iith.ac.in',
     year: 2020,
   },

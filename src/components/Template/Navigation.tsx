@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import routes from '@/data/routes';
+import routes, { isListedRoute } from '@/data/routes';
 import { isActiveRoute } from '@/lib/routes';
 import { AUTHOR_NAME } from '@/lib/utils';
 
@@ -21,7 +21,7 @@ export default function Navigation() {
 
       <nav className="nav-links" aria-label="Primary">
         {routes
-          .filter((l) => !l.index && l.primary !== false)
+          .filter((l) => !l.index && l.primary !== false && isListedRoute(l))
           .map((l) => {
             const active = isActiveRoute(pathname, l.path);
 

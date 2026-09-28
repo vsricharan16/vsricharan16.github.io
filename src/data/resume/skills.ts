@@ -108,9 +108,29 @@ const skills: Skill[] = [
     competency: 3,
     category: ['Infrastructure', 'Databases'],
   },
+  {
+    title: 'Kafka',
+    competency: 3,
+    category: ['Infrastructure'],
+  },
+  {
+    title: 'Jenkins',
+    competency: 3,
+    category: ['Infrastructure'],
+  },
+  {
+    title: 'Spring',
+    competency: 3,
+    category: ['Infrastructure'],
+  },
   // Databases
   {
     title: 'MongoDB',
+    competency: 3,
+    category: ['Databases'],
+  },
+  {
+    title: 'Cassandra',
     competency: 3,
     category: ['Databases'],
   },

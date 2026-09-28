@@ -7,11 +7,14 @@ import PageWrapper from '@/components/Template/PageWrapper';
 import { createPageMetadata } from '@/lib/metadata';
 import { AUTHOR_NAME } from '@/lib/utils';
 
-export const metadata: Metadata = createPageMetadata({
-  title: 'Stats',
-  description: `Some statistics about ${AUTHOR_NAME} and this site`,
-  path: '/stats/',
-});
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: 'Stats',
+    description: `Some statistics about ${AUTHOR_NAME} and this site`,
+    path: '/stats/',
+  }),
+  robots: { index: false, follow: false },
+};
 
 export default function StatsPage() {
   return (

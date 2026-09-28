@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import routes from '../../data/routes';
+import routes, { isListedRoute } from '../../data/routes';
 import { isActiveRoute } from '../../lib/routes';
 import SlideMenu from './SlideMenu';
 
@@ -37,7 +37,7 @@ export default function Hamburger() {
       </button>
       <ul className="hamburger-ul">
         {routes
-          .filter((l) => l.primary !== false)
+          .filter((l) => l.primary !== false && isListedRoute(l))
           .map((l) => {
             const active = isActiveRoute(pathname, l.path);
 

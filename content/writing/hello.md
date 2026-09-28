@@ -2,6 +2,7 @@
 title: Hello
 date: '2026-09-27'
 description: 'A short note on this site, storage systems, and how to reach me.'
+draft: true
 ---
 
 I'm V Sri Charan Reddy. I work on Core Data Path at [Nutanix](https://www.nutanix.com), building storage control planes and data-path infrastructure in C++ and gRPC.

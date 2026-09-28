@@ -56,8 +56,7 @@
   .resume-nav,
   .hero-bg,
   .writing-rss-link,
-  .about-section-nav,
-  .about-section-heading-hash {
+  .about-section-nav {
     display: none !important;
   }
 
@@ -169,8 +168,8 @@
   }
 
   .job-logo {
-    width: 14pt;
-    height: 14pt;
+    width: 18pt;
+    height: 18pt;
     padding: 1pt;
   }
 
@@ -214,10 +213,6 @@
   .skill-tag,
   .tech-tag {
     border-color: rgba(0, 0, 0, 0.35);
-  }
-
-  .skill-tag::before {
-    display: none;
   }
 
   /* Reveal destinations for links that are not obvious from their text. */

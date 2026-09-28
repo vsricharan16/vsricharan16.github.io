@@ -35,7 +35,7 @@ Hello from the intro.
     ).toBeInTheDocument();
   });
 
-  it('assigns section variants for compact and links sections', () => {
+  it('assigns the compact variant to short list sections', () => {
     const { container } = render(
       <AboutContent
         markdown={`# Intro
@@ -46,7 +46,7 @@ Lead paragraph.
 
 - Running
 
-# Websites from People I Admire
+# Fun Facts
 
 - [Example](https://example.com)`}
       />,
@@ -56,7 +56,7 @@ Lead paragraph.
 
     expect(sections).toHaveLength(2);
     expect(sections[0]).toHaveClass('about-section--compact');
-    expect(sections[1]).toHaveClass('about-section--links');
+    expect(sections[1]).toHaveClass('about-section--compact');
     expect(screen.getByRole('link', { name: 'Example' })).toHaveAttribute(
       'target',
       '_blank',
@@ -74,21 +74,22 @@ Lead paragraph.
 
 - Built a thing.
 
-# Travel / Geography
+# Fun Facts
 
-- Went somewhere.`}
+- Ran a race.`}
       />,
     );
 
     expect(
       screen.getByRole('heading', { name: 'Some History' }),
     ).toHaveAttribute('id', 'some-history');
-    expect(
-      screen.getByRole('heading', { name: 'Travel / Geography' }),
-    ).toHaveAttribute('id', 'travel-geography');
+    expect(screen.getByRole('heading', { name: 'Fun Facts' })).toHaveAttribute(
+      'id',
+      'fun-facts',
+    );
   });
 
-  it('renders section navigation and self-links for the real about markdown', () => {
+  it('renders section navigation for the real about markdown', () => {
     const sectionTitles = getActualSectionTitles(aboutMarkdown);
     const { container } = render(<AboutContent markdown={aboutMarkdown} />);
     const nav = screen.getByRole('navigation', { name: 'About sections' });
@@ -104,9 +105,7 @@ Lead paragraph.
         'href',
         `#${headingId}`,
       );
-      expect(
-        container.querySelector(`h2#${headingId} > a[href="#${headingId}"]`),
-      ).toBeTruthy();
+      expect(container.querySelector(`h2#${headingId} > a`)).toBeNull();
     }
   });
 
@@ -117,8 +116,9 @@ Lead paragraph.
 
     expect(html).toContain('href="#some-history"');
     expect(html).toContain('id="some-history"');
-    expect(html).toContain('href="#travel-geography"');
-    expect(html).toContain('id="travel-geography"');
+    expect(html).toContain('href="#fun-facts"');
+    expect(html).toContain('id="fun-facts"');
+    expect(html).not.toContain('href="#travel-geography"');
     expect(html).toContain('target="_blank"');
     expect(html).toContain('href="/contact"');
     expect(html).not.toMatch(/href="\/contact"[^>]*target="_blank"/);
@@ -131,30 +131,16 @@ Lead paragraph.
 
     const nav = screen.getByRole('navigation', { name: 'About sections' });
     const navLink = within(nav).getByRole('link', {
-      name: 'Travel / Geography',
+      name: 'Some History',
     });
 
     navLink.click();
 
     await waitFor(() => {
-      expect(window.location.hash).toBe('#travel-geography');
+      expect(window.location.hash).toBe('#some-history');
     });
     expect(document.querySelector(window.location.hash)).toHaveTextContent(
-      'Travel / Geography',
-    );
-
-    const heading = screen.getByRole('heading', { name: 'Fun Facts' });
-    const permalink = within(heading).getByRole('link', {
-      name: 'Fun Facts',
-    });
-
-    permalink.click();
-
-    await waitFor(() => {
-      expect(window.location.hash).toBe('#fun-facts');
-    });
-    expect(document.querySelector(window.location.hash)).toHaveTextContent(
-      'Fun Facts',
+      'Some History',
     );
   });
 });

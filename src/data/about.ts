@@ -8,13 +8,12 @@ If you want to talk about storage systems, distributed control planes, or collab
 
 # Some History
 
-- I studied Computer Science at [IIT Hyderabad](https://www.iith.ac.in) from 2016 to 2020, with a minor in Design.
+- I studied Computer Science at [IIT Hyderabad](https://www.iith.ac.in), with a minor in Design, including a research internship on software-defined networks.
+- I interned at [Samsung R&D Bangalore](https://research.samsung.com) on 4G and 5G radio-unit testing.
 - After graduating I joined [Sprinklr](https://www.sprinklr.com) in Gurugram, where I built an alert manager and autoscaling for high-volume message infrastructure.
-- I moved to California for a Master of Computer Science at [UC Irvine](https://www.uci.edu), finishing in 2022.
+- I moved to California for a Master of Computer Science at [UC Irvine](https://www.uci.edu).
 - I interned at [Amazon](https://www.amazon.com) in Sunnyvale on camera 3A algorithms, then joined [Nutanix](https://www.nutanix.com) on Core Data Path.
 - I spent a stretch at Amazon in 2023–2024 building a serverless KPI dashboard, then returned to Nutanix, where I work today.
-
-Ask me in person for the stories that do not belong on a résumé.
 
 # I Like
 
@@ -22,41 +21,9 @@ Ask me in person for the stories that do not belong on a résumé.
 - C++, gRPC, and high-concurrency code.
 - OS internals, networking, and control planes.
 - Clear interfaces and boring, reliable infrastructure.
-- [Good design](/).
-
-# Travel / Geography
-
-- I grew up in India and studied at IIT Hyderabad.
-- I worked in Gurugram before moving to California.
-- I have lived in Irvine, Sunnyvale, and now San Jose.
 
 # Fun Facts
 
-- Most of my day is C++ in a storage stack, not a laptop-sticker collection of languages.
+- I love running. I ran the [Tokyo Marathon](https://www.marathon.tokyo/2026/) in 2026 (bib 38318) in 3:56:25.
 - I have shipped the same MapReduce-shaped control-plane ideas in a [course project](https://github.com/vsricharan16/Distributed-MapReduce) and then in production.
-- I added this page because a site that is only a résumé feels unfinished.
-
-# I Dream Of
-
-- Building systems that stay up.
-- Enabling a brighter future for everyone, regardless of political or socioeconomic status.
-- Treating every individual with genuine kindness and respect.
-- Staying curious.
-- Continually improving.
-- You not checking the commit history for earlier drafts of this file.
-
-# Websites from People I Admire
-
-- [Nutanix](https://www.nutanix.com)
-- [IIT Hyderabad](https://www.iith.ac.in)
-- [UC Irvine](https://www.uci.edu)
-- [Amazon](https://www.amazon.com)
-- [Sprinklr](https://www.sprinklr.com)
-- [gRPC](https://grpc.io)
-- [Kubernetes](https://kubernetes.io)
-- [Linux kernel](https://www.kernel.org)
-- [AWS](https://aws.amazon.com)
-- [Designing Data-Intensive Applications](https://dataintensive.net)
-
-If something here is missing, tell me.
 `;

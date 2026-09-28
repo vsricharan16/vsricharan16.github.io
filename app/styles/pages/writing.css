@@ -21,11 +21,11 @@
 }
 
 .writing-rss-link {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--text-ui);
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-fg-light);
   text-decoration: none;
   background-image: none;
@@ -97,11 +97,11 @@
 .writing-date,
 .writing-source {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--text-2xs);
   font-variant-numeric: tabular-nums;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-fg-light);
 }
 
@@ -169,7 +169,7 @@
 .writing-external {
   display: inline-block;
   margin-left: 0.3rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--text-ui);
   color: var(--color-fg-light);
   opacity: 1;
@@ -186,11 +186,11 @@
 
 .writing-section-label {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--text-ui);
   font-weight: var(--font-weight-medium);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
+  text-transform: none;
+  letter-spacing: var(--tracking-normal);
   color: var(--color-fg-light);
   padding: 0 0 0.75rem;
 }
@@ -248,11 +248,11 @@
 
 .post-date {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--text-2xs);
   font-variant-numeric: tabular-nums;
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-fg-light);
   margin-bottom: 0.75rem;
 }

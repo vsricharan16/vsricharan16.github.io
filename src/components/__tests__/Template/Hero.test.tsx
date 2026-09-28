@@ -15,7 +15,7 @@ describe('Hero', () => {
     render(<Hero />);
 
     const heading = screen.getByRole('heading', { level: 1 });
-    expect(heading).toHaveTextContent('V Sri Charan Reddy');
+    expect(heading).toHaveTextContent('Sri Charan');
   });
 
   it('describes the current work at Nutanix', () => {
@@ -26,15 +26,12 @@ describe('Hero', () => {
     expect(nutanixLink).toHaveAttribute('target', '_blank');
     expect(nutanixLink).toHaveClass('hero-highlight');
 
-    const dataPathLink = screen.getByRole('link', { name: /core data path/i });
-    expect(dataPathLink).toHaveAttribute(
-      'href',
-      'https://www.nutanix.com/products/cloud-platform',
-    );
-    expect(dataPathLink).toHaveClass('hero-highlight');
+    expect(
+      screen.queryByRole('link', { name: /core data path/i }),
+    ).not.toBeInTheDocument();
 
     expect(container.querySelector('.hero-tagline')).toHaveTextContent(
-      "I'm a Member of Technical Staff at Nutanix, working on Core Data Path. I build petabyte-scale storage control planes and high-concurrency systems in C++ and gRPC.",
+      "I'm a Member of Technical Staff at Nutanix, working at the intersection of distributed systems and storage. I tackle hard engineering problems to build petabyte-scale storage control planes and highly concurrent architectures where high throughput and ultra-low latency are critical. Whether I'm designing massive systems or just tinkering on my own time, I'm a C++ enthusiast at heart.",
     );
   });
 

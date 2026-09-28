@@ -3,15 +3,13 @@ import { describe, expect, it } from 'vitest';
 import profile from '../../../data/profile.json';
 import EmailLink from '../../Contact/EmailLink';
 
-const [localPart, domain] = profile.email.split('@');
-
 describe('EmailLink', () => {
   it('renders the email as a static mailto link', () => {
     render(<EmailLink />);
 
-    const link = screen.getByRole('link', { name: `Email ${profile.email}` });
+    const link = screen.getByRole('link', { name: profile.email });
     expect(link).toHaveAttribute('href', `mailto:${profile.email}`);
-    expect(link).toHaveTextContent(`${localPart}@${domain}`);
+    expect(link).toHaveTextContent(profile.email);
   });
 
   it('does not cycle through joke aliases', () => {
@@ -19,8 +17,8 @@ describe('EmailLink', () => {
 
     expect(screen.queryByText(/hola/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/literally-anything/i)).not.toBeInTheDocument();
-    expect(document.querySelector('.contact-email-prefix')).toHaveTextContent(
-      localPart,
+    expect(screen.getByRole('link', { name: profile.email })).toHaveTextContent(
+      profile.email,
     );
   });
 });

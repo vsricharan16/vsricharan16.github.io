@@ -14,7 +14,6 @@ export default function Degree({ data }: DegreeProps) {
           <a href={data.link} {...newTabProps(data.link)}>
             {data.school}
           </a>
-          , <time dateTime={String(data.year)}>{data.year}</time>
         </p>
       </header>
     </article>
