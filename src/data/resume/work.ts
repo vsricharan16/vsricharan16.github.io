@@ -79,6 +79,19 @@ const work: Position[] = [
     ],
   },
   {
+    name: 'IIT Hyderabad',
+    position: 'Placement Coordinator',
+    url: 'https://www.iith.ac.in',
+    logo: '/images/companies/iith.png',
+    startDate: '2019-05-01',
+    endDate: '2020-04-01',
+    summary: `Served on the student placement team, connecting recruiters with the graduating class through the campus hiring cycle.`,
+    highlights: [
+      'Invited and onboarded companies for campus recruitment, acting as the student point of contact across the hiring season.',
+      'Coordinated pre-placement talks, written tests, and interview logistics between recruiters and students.',
+    ],
+  },
+  {
     name: 'Samsung R&D Bangalore',
     position: 'Software Developer Intern, Networks',
     url: 'https://research.samsung.com',
@@ -108,6 +121,7 @@ const work: Position[] = [
     name: 'Elan & nVision',
     position: 'Publicity Coordinator',
     url: 'https://www.elan.org.in',
+    logo: '/images/companies/iith.png',
     startDate: '2017-07-01',
     endDate: '2018-03-01',
     highlights: [

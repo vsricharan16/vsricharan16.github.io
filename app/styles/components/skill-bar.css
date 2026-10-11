@@ -4,12 +4,14 @@
    ======================================== */
 
 @layer components {
-  /* Filter switches — squared, unlit until selected. */
+  /* Filter switches — unlit until selected. Deliberately softened to an
+     iOS-style rounded rectangle, an intentional exception to the near-square
+     system for this control row. */
   .skillbutton {
     appearance: none;
     background-color: transparent;
     border: var(--rule) solid var(--color-control-border);
-    border-radius: var(--radius-sm);
+    border-radius: 0.5rem;
     color: var(--color-fg-light);
     cursor: pointer;
     display: inline-block;
@@ -49,30 +51,11 @@
     color: var(--color-on-accent);
   }
 
-  /* "All" is a reset, not another category. Keep the target full-sized while
-     removing the filled chip that otherwise dominates the filter row. */
-  .skillbutton--all,
-  .skillbutton--all:hover,
-  .skillbutton--all.skillbutton-active,
-  .skillbutton--all.skillbutton-active:hover {
-    background: transparent;
-    border-color: transparent;
-  }
-
-  .skillbutton--all.skillbutton-active {
-    color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
-  }
-
-  .skillbutton--all.skillbutton-active:hover {
-    border-bottom-color: var(--color-accent);
-  }
-
   /* Skill section containers */
   .skill-button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 0.5rem;
     justify-content: flex-start;
     margin-bottom: 1.5rem;
   }

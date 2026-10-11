@@ -127,6 +127,11 @@
     gap: 0 1.5rem;
   }
 
+  /* On paper the row is narrow; three course columns crush, so keep two. */
+  .resume-page .courses .course-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* The spine and its ticks are screen scaffolding; on paper the dated
      gutter already does that work, and hairlines cost toner. */
   .jobs-container::before,
@@ -167,7 +172,8 @@
     margin-bottom: 0.35rem;
   }
 
-  .job-logo {
+  .job-logo,
+  .degree-logo {
     width: 18pt;
     height: 18pt;
     padding: 1pt;

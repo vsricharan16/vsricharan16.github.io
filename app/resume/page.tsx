@@ -34,11 +34,14 @@ export default function ResumePage() {
         <header className="resume-header">
           <h1 className="resume-title">Resume</h1>
           <p className="resume-summary">
-            Software engineer with 5 years of experience architecting
-            petabyte-scale storage control planes and data-path infrastructure.
-            I&apos;m currently a Member of Technical Staff at Nutanix, working
-            on Core Data Path. Deep expertise in C++, gRPC, OS internals, and
-            high-concurrency systems. UC Irvine MCS, IIT Hyderabad B.Tech.
+            Software engineer with 5 years of experience architecting scalable
+            storage control planes, distributed data processing engines, and
+            latency-critical systems. Currently a Member of Technical Staff at
+            Nutanix on the Core Data Path team. Holds a Master&apos;s in
+            Computer Science from UC Irvine and a B.Tech from IIT Hyderabad,
+            with deep expertise in C++, distributed systems, storage internals,
+            Linux internals, concurrency, and high-performance systems
+            engineering.
           </p>
           {/* Print-only, but real markup rather than CSS `content`, so it is
               selectable, linkable, and reads from the shared profile. The

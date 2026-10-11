@@ -32,11 +32,19 @@
 
 .resume-page .courses .course-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+/* Three columns need the full page measure; step down to two, then one,
+   as the row narrows so longer titles do not crush together. */
+@media (max-width: 959px) {
+  .resume-page .courses .course-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 735px) {

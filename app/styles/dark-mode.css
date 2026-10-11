@@ -59,6 +59,18 @@
   background: var(--color-bg-alt);
 }
 
+/* Company logos are dark ink on transparency, drawn to sit on a white page:
+   Amazon's black 'a', Samsung's and Nutanix's deep blue all fall to near-black
+   on the dark chip and disappear. Keep the chip light in dark mode — a white
+   tile is also how these marks are meant to be shown — with a faint neutral
+   hairline so the tile reads against the page. The colourful marks (IITH,
+   Sprinklr) are unaffected. */
+[data-theme='dark'] .job-logo,
+[data-theme='dark'] .degree-logo {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
 /* Portrait — a slight dim so a colour photograph does not blow out on ink.
    Scoped with :where() so it carries zero specificity and cannot override
    the per-context treatments in home.css and footer.css. */
