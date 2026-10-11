@@ -38,10 +38,7 @@ export default function HomePage() {
       {SHOW_HOME_WRITING && (
         <section className="home-writing" aria-labelledby="home-writing-title">
           <div className="home-writing-header">
-            <div>
-              <span className="home-section-kicker">Recent signal</span>
-              <h2 id="home-writing-title">Latest writing</h2>
-            </div>
+            <h2 id="home-writing-title">Latest writing</h2>
             <Link href="/writing/" className="home-writing-all">
               View all
             </Link>
@@ -51,7 +48,8 @@ export default function HomePage() {
               const content = (
                 <>
                   <span className="home-writing-meta">
-                    {formatDate(item.date)} · {item.source}
+                    {formatDate(item.date)}
+                    {item.isExternal ? ` · ${item.source}` : ''}
                   </span>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
