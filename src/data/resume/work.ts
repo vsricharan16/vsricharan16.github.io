@@ -104,6 +104,18 @@ const work: Position[] = [
       'Developed a network monitoring tool to predict network utilization in a software-defined network, with 86% accuracy across topologies.',
     ],
   },
+  {
+    name: 'Elan & nVision',
+    position: 'Publicity Coordinator',
+    url: 'https://www.elan.org.in',
+    startDate: '2017-07-01',
+    endDate: '2018-03-01',
+    highlights: [
+      'Elan & nVision is IIT Hyderabad’s flagship annual techno-cultural festival.',
+      'Directed 40+ student volunteers to execute on-ground marketing and introduced a Campus Ambassador program that recruited representatives from 50+ universities in Telangana and beyond.',
+      'Orchestrated Facebook and Instagram campaigns that generated 500,000+ organic impressions and increased technical event registrations by 25%.',
+    ],
+  },
 ];
 
 export default work;
