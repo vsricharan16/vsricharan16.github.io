@@ -23,7 +23,9 @@
 }
 
 .about-content {
-  max-width: var(--measure-read);
+  /* A touch wider than the reading measure: still left-aligned and short of the
+     page measure, so the body stays comfortably right-heavy rather than full. */
+  max-width: calc(var(--measure-read) + 6rem);
   line-height: 1.7;
 }
 
@@ -108,7 +110,7 @@
 }
 
 .about-intro p {
-  max-width: var(--measure-read);
+  max-width: calc(var(--measure-read) + 6rem);
   font-size: clamp(1.04rem, 0.7vw + 0.95rem, 1.1rem);
   line-height: 1.7;
   color: var(--color-fg-bold);
