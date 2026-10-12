@@ -16,7 +16,7 @@ const work: Position[] = [
   {
     name: 'Nutanix',
     position: 'Member of Technical Staff, Core Data Path',
-    url: 'https://www.nutanix.com',
+    url: 'https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute',
     logo: '/images/companies/nutanix.svg',
     startDate: '2024-02-01',
     summary: `Working on Curator, the MapReduce control plane for storage, now extended to run across disaggregated third-party arrays.`,
@@ -31,7 +31,7 @@ const work: Position[] = [
   {
     name: 'Amazon',
     position: 'Software Dev Engineer, Audio Team',
-    url: 'https://www.amazon.com',
+    url: 'https://www.amazon.jobs/content/en/teams/devices-and-services/lab126',
     logo: '/images/companies/amazon.png',
     startDate: '2023-09-01',
     endDate: '2024-02-01',
@@ -44,7 +44,7 @@ const work: Position[] = [
   {
     name: 'Nutanix',
     position: 'Member of Technical Staff, Core Data Path',
-    url: 'https://www.nutanix.com',
+    url: 'https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute',
     logo: '/images/companies/nutanix.svg',
     startDate: '2023-03-01',
     endDate: '2023-09-01',
@@ -57,7 +57,7 @@ const work: Position[] = [
   {
     name: 'Amazon',
     position: 'Software Dev Engineer Intern, Camera Team',
-    url: 'https://www.amazon.com',
+    url: 'https://www.amazon.jobs/content/en/teams/devices-and-services/lab126',
     logo: '/images/companies/amazon.png',
     startDate: '2022-06-01',
     endDate: '2022-09-01',
@@ -97,7 +97,7 @@ const work: Position[] = [
   {
     name: 'Samsung R&D Bangalore',
     position: 'Software Developer Intern, Networks',
-    url: 'https://research.samsung.com',
+    url: 'https://research.samsung.com/sri-b',
     logo: '/images/companies/samsung.svg',
     startDate: '2019-05-01',
     endDate: '2019-07-01',
