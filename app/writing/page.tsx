@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SchemaGraph } from '@/components/Schema';
 import PageWrapper from '@/components/Template/PageWrapper';
+import WritingFilter from '@/components/Writing/WritingFilter';
 import { createPageMetadata } from '@/lib/metadata';
 import {
   blogNode,
@@ -35,16 +36,11 @@ export const metadata: Metadata = {
 };
 
 interface WritingItemProps {
-  featured?: boolean;
   item: Item;
   showDate?: boolean;
 }
 
-function WritingItem({
-  featured = false,
-  item,
-  showDate = true,
-}: WritingItemProps) {
+function WritingItem({ item, showDate = true }: WritingItemProps) {
   const content = (
     <>
       <div className="writing-meta">
@@ -71,9 +67,7 @@ function WritingItem({
     </>
   );
 
-  const className = ['writing-item', featured ? 'writing-item--featured' : '']
-    .filter(Boolean)
-    .join(' ');
+  const className = 'writing-item';
 
   if (item.isExternal) {
     return (
@@ -137,19 +131,8 @@ export default function WritingPage() {
         </header>
 
         {internal.length > 0 && (
-          <section className="writing-group" aria-labelledby="writing-here">
-            <h2 id="writing-here" className="writing-section-label">
-              Essays on this site
-            </h2>
-            <div className="writing-list">
-              {internal.map((item) => (
-                <WritingItem
-                  key={item.url}
-                  item={item}
-                  featured={item.url === latestDatedItem?.url}
-                />
-              ))}
-            </div>
+          <section className="writing-group">
+            <WritingFilter posts={internal} />
           </section>
         )}
 
@@ -163,11 +146,7 @@ export default function WritingPage() {
             </h2>
             <div className="writing-list">
               {external.map((item) => (
-                <WritingItem
-                  key={item.url}
-                  item={item}
-                  featured={item.url === latestDatedItem?.url}
-                />
+                <WritingItem key={item.url} item={item} />
               ))}
             </div>
           </section>

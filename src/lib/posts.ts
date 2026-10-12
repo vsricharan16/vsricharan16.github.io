@@ -12,6 +12,8 @@ export interface PostFrontmatter {
   image?: string;
   /** Required whenever `image` is set. */
   imageAlt?: string;
+  /** Lowercase, hyphenated topic tags. Omitted from the object when absent. */
+  tags?: string[];
 }
 
 export interface Post {
@@ -23,6 +25,8 @@ export interface Post {
   draft?: boolean;
   image?: string;
   imageAlt?: string;
+  /** Always present; an empty array when the post declares no tags. */
+  tags: string[];
 }
 
 const postsDirectory = path.join(process.cwd(), 'content/writing');
@@ -78,6 +82,7 @@ function readPost(slug: string): Post | null {
     draft: frontmatter.draft,
     image: frontmatter.image,
     imageAlt: frontmatter.imageAlt,
+    tags: frontmatter.tags ?? [],
   };
 }
 
@@ -144,6 +149,8 @@ export function validatePostFrontmatter(
     );
   }
 
+  const tags = parseTags(value.tags, source);
+
   return {
     title,
     date,
@@ -151,7 +158,34 @@ export function validatePostFrontmatter(
     ...(value.draft === undefined ? {} : { draft: value.draft }),
     ...(image === undefined ? {} : { image }),
     ...(imageAlt === undefined ? {} : { imageAlt }),
+    ...(tags === undefined ? {} : { tags }),
   };
+}
+
+/**
+ * Optional `tags:` YAML array. Absent frontmatter yields `undefined` so the
+ * key is dropped from the object entirely (readers default to `[]`); a present
+ * key must be an array of non-empty strings, normalized to lowercase.
+ */
+function parseTags(value: unknown, source: string): string[] | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Array.isArray(value)) {
+    throw frontmatterError(
+      source,
+      '"tags" must be a YAML array of strings when provided',
+    );
+  }
+  return value.map((entry, index) => {
+    if (typeof entry !== 'string' || entry.trim() === '') {
+      throw frontmatterError(
+        source,
+        `"tags[${index}]" must be a non-empty string`,
+      );
+    }
+    return entry.trim().toLowerCase();
+  });
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

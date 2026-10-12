@@ -7,6 +7,7 @@ import WritingPage from '../writing/page';
 
 describe('writing information architecture', () => {
   it('surfaces recent writing on the homepage', () => {
+    const newest = getWritingItems().find((item) => item.date);
     const { container } = render(<HomePage />);
 
     expect(
@@ -16,7 +17,7 @@ describe('writing information architecture', () => {
       container.querySelectorAll('.home-writing-item').length,
     ).toBeGreaterThan(0);
     expect(
-      screen.getByRole('heading', { name: 'Locks and Critical Section' }),
+      screen.getByRole('heading', { name: newest?.title ?? '' }),
     ).toBeInTheDocument();
   });
 
@@ -24,8 +25,9 @@ describe('writing information architecture', () => {
     const { container } = render(<WritingPage />);
 
     expect(
-      screen.getByRole('heading', { level: 2, name: 'Essays on this site' }),
-    ).toBeInTheDocument();
+      screen.queryByRole('heading', { level: 2, name: 'Essays on this site' }),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText('On this site')).not.toBeInTheDocument();
     expect(
       screen.queryByRole('heading', {
         level: 2,
@@ -41,14 +43,12 @@ describe('writing information architecture', () => {
     );
   });
 
-  it('features exactly the newest dated item, wherever it is grouped', () => {
-    const newest = getWritingItems().find((item) => item.date);
+  it('lists every essay at the same title size', () => {
     const { container } = render(<WritingPage />);
-    const featured = container.querySelectorAll('.writing-item--featured');
 
-    expect(featured).toHaveLength(1);
-    expect(featured[0].getAttribute('href')?.replace(/\/$/, '')).toBe(
-      newest?.url.replace(/\/$/, ''),
+    expect(container.querySelector('.writing-item--featured')).toBeNull();
+    expect(container.querySelectorAll('.writing-title').length).toBe(
+      getWritingItems().length,
     );
   });
 
