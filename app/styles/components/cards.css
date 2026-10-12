@@ -298,12 +298,21 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  font-family: var(--font-display);
+  margin: 0;
+  /* The whole entry reads in one typeface; hierarchy comes from size, weight,
+     and colour rather than switching to the display serif for the name. */
+  font-family: var(--font-body);
+}
+
+/* Role title — the prominent line, now at the top of the entry. */
+.job-position {
+  font-family: var(--font-body);
   font-size: var(--text-lg);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--tracking-tight);
-  margin: 0;
-  line-height: 1.15;
+  letter-spacing: var(--tracking-normal);
+  line-height: 1.2;
+  text-transform: none;
+  color: var(--color-fg-bold);
 }
 
 /* Dates sit in the gutter in the same face as the rest of the
@@ -342,8 +351,14 @@
   font-weight: var(--font-weight-medium);
 }
 
+/* Company — the secondary line beneath the role, still linked. */
 .jobs-container header h3 a.job-company {
-  color: var(--color-fg-bold);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
+  color: var(--color-fg-light);
   text-decoration: none;
   background-image: none;
   width: fit-content;
@@ -351,15 +366,6 @@
 
 .jobs-container header h3 a.job-company:hover {
   color: var(--color-accent);
-}
-
-.job-position {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-normal);
-  text-transform: none;
-  color: var(--color-fg-light);
 }
 
 .jobs-container .points {
@@ -453,25 +459,48 @@
   margin-bottom: 1.5em;
 }
 
-.degree-container h3 {
-  font-weight: var(--font-weight-normal);
+/* Institution mark to the left, matching the Experience logos. */
+.degree-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
 }
 
-.degree-container .degree {
+.degree-logo {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  padding: 0.2rem;
+  border: var(--rule) solid var(--color-border);
+  background: var(--color-bg);
+  object-fit: contain;
+}
+
+/* The institution is the heading; the degree and any minor sit beneath it.
+   Body typeface to stay uniform with the Experience entries. */
+.degree-container .school {
+  font-family: var(--font-body);
   font-size: var(--text-lg);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-normal);
   margin-bottom: 0.25em;
   text-transform: none;
   color: var(--color-fg-bold);
 }
 
-.degree-container .school {
+.degree-container .degree {
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-normal);
   color: var(--color-fg-light);
-  margin-bottom: 0.5em;
-  padding-top: 0.2em;
+  margin: 0;
+  text-transform: none;
+}
+
+.degree-container .degree-minor {
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-fg-light);
+  margin: 0.15em 0 0;
   text-transform: none;
 }
 
@@ -484,28 +513,13 @@
   display: block;
 }
 
-.course-container a {
-  display: block;
-  padding: 0.4rem 0;
-  background: transparent;
-  background-image: none;
-  border: 0;
-  border-radius: 0;
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
 .courses .course-name {
   display: block;
+  padding: 0.4rem 0;
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-normal);
   color: var(--color-fg);
   line-height: var(--leading-snug);
-}
-
-.course-container a:hover .course-name,
-.course-container a:focus-visible .course-name {
-  color: var(--color-accent);
 }

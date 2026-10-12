@@ -9,26 +9,16 @@ export interface Category {
   color: string;
 }
 
+// Declared order is the display order: skills render in the sequence below,
+// filtered per category. Each category's internal order matches that sequence,
+// so the array is arranged to read correctly for Languages and Databases alike
+// (SQL is shared and sits last in both). `competency` drives tag emphasis only,
+// not order.
 const skills: Skill[] = [
   // Languages
   {
     title: 'C++',
     competency: 5,
-    category: ['Languages', 'Systems'],
-  },
-  {
-    title: 'C',
-    competency: 4,
-    category: ['Languages', 'Systems'],
-  },
-  {
-    title: 'Go',
-    competency: 4,
-    category: ['Languages', 'Systems'],
-  },
-  {
-    title: 'Python',
-    competency: 4,
     category: ['Languages'],
   },
   {
@@ -37,9 +27,24 @@ const skills: Skill[] = [
     category: ['Languages'],
   },
   {
-    title: 'SQL',
-    competency: 3,
-    category: ['Languages', 'Databases'],
+    title: 'C',
+    competency: 4,
+    category: ['Languages'],
+  },
+  {
+    title: 'Python',
+    competency: 4,
+    category: ['Languages'],
+  },
+  {
+    title: 'Go',
+    competency: 4,
+    category: ['Languages'],
+  },
+  {
+    title: 'Bash/Shell',
+    competency: 4,
+    category: ['Languages'],
   },
   // Systems
   {
@@ -58,18 +63,28 @@ const skills: Skill[] = [
     category: ['Systems'],
   },
   {
-    title: 'Concurrency & Multithreading',
+    title: 'Concurrency',
+    competency: 5,
+    category: ['Systems'],
+  },
+  {
+    title: 'Multithreading',
+    competency: 5,
+    category: ['Systems'],
+  },
+  {
+    title: 'File Systems',
+    competency: 5,
+    category: ['Systems'],
+  },
+  {
+    title: 'gRPC',
     competency: 5,
     category: ['Systems'],
   },
   {
     title: 'Networking (TCP/IP)',
     competency: 4,
-    category: ['Systems'],
-  },
-  {
-    title: 'gRPC',
-    competency: 5,
     category: ['Systems'],
   },
   {
@@ -80,6 +95,16 @@ const skills: Skill[] = [
   {
     title: 'Microservices',
     competency: 4,
+    category: ['Systems'],
+  },
+  {
+    title: 'Event-Driven Architecture',
+    competency: 4,
+    category: ['Systems'],
+  },
+  {
+    title: 'Systems Design',
+    competency: 5,
     category: ['Systems'],
   },
   // Cloud & Infra
@@ -99,17 +124,12 @@ const skills: Skill[] = [
     category: ['Infrastructure'],
   },
   {
-    title: 'Grafana',
+    title: 'Kafka',
     competency: 3,
     category: ['Infrastructure'],
   },
   {
-    title: 'Elasticsearch',
-    competency: 3,
-    category: ['Infrastructure', 'Databases'],
-  },
-  {
-    title: 'Kafka',
+    title: 'Spring',
     competency: 3,
     category: ['Infrastructure'],
   },
@@ -119,20 +139,35 @@ const skills: Skill[] = [
     category: ['Infrastructure'],
   },
   {
-    title: 'Spring',
+    title: 'Grafana',
     competency: 3,
     category: ['Infrastructure'],
   },
   // Databases
   {
-    title: 'MongoDB',
-    competency: 3,
+    title: 'RocksDB',
+    competency: 4,
     category: ['Databases'],
   },
   {
     title: 'Cassandra',
     competency: 3,
     category: ['Databases'],
+  },
+  {
+    title: 'MongoDB',
+    competency: 3,
+    category: ['Databases'],
+  },
+  {
+    title: 'Elasticsearch',
+    competency: 3,
+    category: ['Databases', 'Infrastructure'],
+  },
+  {
+    title: 'SQL',
+    competency: 3,
+    category: ['Databases', 'Languages'],
   },
 ].map((skill) => ({ ...skill, category: skill.category.sort() }));
 

@@ -152,18 +152,21 @@ describe('Skills', () => {
     expect(groupTitles.length).toBeGreaterThan(0);
   });
 
-  it('sorts skills by competency (highest first)', () => {
+  it('renders skills in the declared order within a category', () => {
     render(<Skills skills={mockSkills} categories={mockCategories} />);
 
-    // Filter to Languages to check sorting
-    fireEvent.click(screen.getByRole('button', { name: 'Languages' }));
+    const languagesGroup = Array.from(
+      document.querySelectorAll('.skill-group'),
+    ).find(
+      (group) =>
+        group.querySelector('.skill-group-title')?.textContent === 'Languages',
+    );
 
-    const skillTags = document.querySelectorAll('.skill-tag-name');
-    const skillNames = Array.from(skillTags).map((el) => el.textContent);
+    const skillNames = Array.from(
+      languagesGroup?.querySelectorAll('.skill-tag-name') ?? [],
+    ).map((el) => el.textContent);
 
-    // Python (5) and TypeScript (5) should come before JavaScript (4)
-    const jsIndex = skillNames.indexOf('JavaScript');
-    const pythonIndex = skillNames.indexOf('Python');
-    expect(pythonIndex).toBeLessThan(jsIndex);
+    // Mirrors the mock's declared order, not competency order.
+    expect(skillNames).toEqual(['Python', 'TypeScript', 'JavaScript']);
   });
 });

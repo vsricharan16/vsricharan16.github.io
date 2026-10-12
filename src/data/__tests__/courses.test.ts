@@ -12,7 +12,6 @@ describe('courses data', () => {
       expect(course.title.trim().length).toBeGreaterThan(0);
       expect(course.number.trim().length).toBeGreaterThan(0);
       expect(course.university.trim().length).toBeGreaterThan(0);
-      expect(course.link).toMatch(/^https?:\/\//);
     }
   });
 
@@ -33,7 +32,7 @@ describe('courses data', () => {
         'Artificial Intelligence',
         'Machine Learning',
         'Data Mining',
-        'Deep Learning for Vision',
+        'Deep Learning',
       ]),
     );
   });

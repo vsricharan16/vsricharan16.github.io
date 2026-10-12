@@ -52,15 +52,13 @@ export default function Skills({ skills, categories }: SkillsProps) {
    * markup lets `print.css` show everything regardless.
    */
   const groupedSkills = useMemo(() => {
-    const sortedSkills = [...skills].sort((a, b) => {
-      if (a.competency !== b.competency) return b.competency - a.competency;
-      return a.title.localeCompare(b.title);
-    });
-
+    // Declared order is the display order; `competency` drives tag emphasis
+    // only. This lets each category read in a hand-tuned sequence rather than
+    // strict proficiency order.
     return categories
       .map((category) => ({
         category,
-        skills: sortedSkills.filter((skill) =>
+        skills: skills.filter((skill) =>
           skill.category.includes(category.name),
         ),
       }))

@@ -54,10 +54,10 @@ export default function Job({ data, tier = 'primary' }: JobProps) {
             />
           ) : null}
           <h3>
+            <span className="job-position">{position}</span>
             <a href={url} className="job-company" {...newTabProps(url)}>
               {name}
             </a>
-            <span className="job-position">{position}</span>
           </h3>
         </header>
         {summary ? <JobSummary summary={summary} /> : null}

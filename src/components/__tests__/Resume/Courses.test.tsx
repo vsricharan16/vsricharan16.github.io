@@ -8,19 +8,16 @@ const mockCourses = [
   {
     title: 'Machine Learning',
     number: 'CS 229',
-    link: 'http://cs229.stanford.edu/',
     university: 'Stanford',
   },
   {
     title: 'Deep Learning',
     number: 'CS 230',
-    link: 'http://cs230.stanford.edu/',
     university: 'Stanford',
   },
   {
     title: 'Algorithms',
     number: 'CS 161',
-    link: 'http://cs161.stanford.edu/',
     university: 'MIT',
   },
 ];
@@ -30,7 +27,7 @@ describe('Courses', () => {
     render(<Courses data={mockCourses} />);
 
     expect(
-      screen.getByRole('heading', { name: /selected courses/i }),
+      screen.getByRole('heading', { name: /^courses$/i }),
     ).toBeInTheDocument();
   });
 
@@ -93,7 +90,6 @@ describe('Course', () => {
   const mockCourse = {
     title: 'Machine Learning',
     number: 'CS 229',
-    link: 'http://cs229.stanford.edu/',
     university: 'Stanford',
   };
 
@@ -104,12 +100,11 @@ describe('Course', () => {
     expect(screen.queryByText(/CS 229/)).not.toBeInTheDocument();
   });
 
-  it('renders course as link', () => {
+  it('renders the course title as plain text, not a link', () => {
     render(<Course data={mockCourse} />);
 
-    const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', mockCourse.link);
-    expect(link).toHaveAttribute('target', '_blank');
+    expect(screen.getByText('Machine Learning')).toBeInTheDocument();
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 
   it('renders as list item', () => {

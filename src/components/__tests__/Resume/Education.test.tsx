@@ -54,12 +54,24 @@ describe('Degree', () => {
     year: 2020,
   };
 
-  it('renders degree title', () => {
+  it('renders the school as the heading', () => {
     render(<Degree data={mockDegree} />);
 
     expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent(
-      'M.S. Computer Science',
+      'Stanford University',
     );
+  });
+
+  it('renders the degree name beneath the school', () => {
+    render(<Degree data={mockDegree} />);
+
+    expect(screen.getByText('M.S. Computer Science')).toBeInTheDocument();
+  });
+
+  it('renders a minor on its own line when provided', () => {
+    render(<Degree data={{ ...mockDegree, minor: 'Minor in Design' }} />);
+
+    expect(screen.getByText('Minor in Design')).toBeInTheDocument();
   });
 
   it('renders school name with link', () => {

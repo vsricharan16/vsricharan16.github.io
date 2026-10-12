@@ -7,7 +7,7 @@
 .skill-groups {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 /* Individual category group */
@@ -86,16 +86,12 @@
   border-color: var(--color-border-alt);
 }
 
-/* Size variations — weight, not scale. */
-.skill-tag--lg {
-  font-weight: var(--font-weight-medium);
-  color: var(--color-fg-bold);
-}
-
-.skill-tag--md {
-  font-weight: var(--font-weight-normal);
-}
-
+/* Competency classes are retained for semantics/tooltips, but every skill tag
+   reads with the same weight and colour so no entry looks more important than
+   another. */
+.skill-tag--lg,
+.skill-tag--md,
 .skill-tag--sm {
-  color: var(--color-fg-light);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-fg);
 }
