@@ -123,7 +123,7 @@ const work: Position[] = [
   {
     name: 'Elan & nVision, IIT Hyderabad',
     position: 'Publicity Coordinator',
-    url: 'https://www.elan.org.in',
+    url: 'https://elan.org.in/',
     logo: '/images/companies/iith.png',
     startDate: '2017-07-01',
     endDate: '2018-03-01',
