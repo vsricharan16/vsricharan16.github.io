@@ -298,12 +298,21 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  font-family: var(--font-display);
+  margin: 0;
+  /* The whole entry reads in one typeface; hierarchy comes from size, weight,
+     and colour rather than switching to the display serif for the name. */
+  font-family: var(--font-body);
+}
+
+/* Role title — the prominent line, now at the top of the entry. */
+.job-position {
+  font-family: var(--font-body);
   font-size: var(--text-lg);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--tracking-tight);
-  margin: 0;
-  line-height: 1.15;
+  letter-spacing: var(--tracking-normal);
+  line-height: 1.2;
+  text-transform: none;
+  color: var(--color-fg-bold);
 }
 
 /* Dates sit in the gutter in the same face as the rest of the
@@ -342,8 +351,14 @@
   font-weight: var(--font-weight-medium);
 }
 
+/* Company — the secondary line beneath the role, still linked. */
 .jobs-container header h3 a.job-company {
-  color: var(--color-fg-bold);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
+  color: var(--color-fg-light);
   text-decoration: none;
   background-image: none;
   width: fit-content;
@@ -351,15 +366,6 @@
 
 .jobs-container header h3 a.job-company:hover {
   color: var(--color-accent);
-}
-
-.job-position {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-normal);
-  text-transform: none;
-  color: var(--color-fg-light);
 }
 
 .jobs-container .points {
@@ -470,10 +476,12 @@
   object-fit: contain;
 }
 
-/* The institution is the heading; the degree and any minor sit beneath it. */
+/* The institution is the heading; the degree and any minor sit beneath it.
+   Body typeface to stay uniform with the Experience entries. */
 .degree-container .school {
+  font-family: var(--font-body);
   font-size: var(--text-lg);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-normal);
   margin-bottom: 0.25em;
   text-transform: none;
