@@ -5,7 +5,7 @@ description: 'How a mutex is built from compare-and-swap, and what atomic operat
 tags: [concurrency, synchronization, cpu]
 ---
 
-A critical section is a stretch of code that touches shared state. Two threads running it at the same time is a data race: lost updates, torn reads, invariants that only hold on paper. A lock's job is to make that stretch exclusive. One thread is in; everyone else waits.
+A critical section is a stretch of code that touches shared state. If two threads run it at the same time you get a data race, and updates can be lost. A lock prevents this: only a single thread can exclusively enter and execute the critical section, while the rest wait their turn.
 
 The interface is small. `lock()` before the shared access, `unlock()` after. The hard part is implementing those two calls without already having a lock.
 
