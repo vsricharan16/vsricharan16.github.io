@@ -22,7 +22,10 @@ describe('Hero', () => {
     const { container } = render(<Hero />);
 
     const employerLink = screen.getByRole('link', { name: /linkedin/i });
-    expect(employerLink).toHaveAttribute('href', 'https://www.linkedin.com');
+    expect(employerLink).toHaveAttribute(
+      'href',
+      'https://engineering.linkedin.com/',
+    );
     expect(employerLink).toHaveAttribute('target', '_blank');
     expect(employerLink).toHaveClass('hero-highlight');
 

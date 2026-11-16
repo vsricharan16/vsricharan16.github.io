@@ -16,7 +16,8 @@ const work: Position[] = [
   {
     name: 'LinkedIn',
     position: 'Senior Software Engineer',
-    url: 'https://www.linkedin.com',
+    url: 'https://engineering.linkedin.com/',
+    logo: '/images/companies/linkedin.svg',
     startDate: '2026-11-01',
     summary: `Working on an exabyte-scale disaggregated storage platform.`,
   },
