@@ -15,7 +15,7 @@ export interface Position {
 const work: Position[] = [
   {
     name: 'LinkedIn',
-    position: 'Senior Software Engineer',
+    position: 'Senior Software Engineer, Core Storage',
     url: 'https://engineering.linkedin.com/',
     logo: '/images/companies/linkedin.svg',
     startDate: '2026-11-01',

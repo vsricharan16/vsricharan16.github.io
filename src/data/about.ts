@@ -15,7 +15,8 @@ If you want to talk about storage, distributed systems, operating systems, datab
 - I interned at [Amazon](https://www.amazon.jobs/content/en/teams/devices-and-services/lab126) in Sunnyvale on the Camera team.
 - After graduation I joined [Nutanix](https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute) on the Core Data Path team.
 - I took a short stint back at [Amazon](https://www.amazon.jobs/content/en/teams/devices-and-services/lab126) on the Audio team, building serverless tooling.
-- I returned to [Nutanix](https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute), where I work on disaggregated storage architecture: Nutanix AHV (hypervisor) compute nodes run virtualized workloads (VMs) whose persistent storage lives on qualified third-party SAN and NAS arrays.
+- I returned to [Nutanix](https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute), where I worked on disaggregated storage architecture: Nutanix AHV (hypervisor) compute nodes run virtualized workloads (VMs) whose persistent storage lives on qualified third-party SAN and NAS arrays.
+- I moved to [LinkedIn](https://engineering.linkedin.com/) to work on exabyte-scale storage problems.
 
 # I Like
 
