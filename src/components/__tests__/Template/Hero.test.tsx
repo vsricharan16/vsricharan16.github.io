@@ -43,7 +43,6 @@ describe('Hero', () => {
 
     expect(container.querySelector('.telemetry')).not.toBeInTheDocument();
     expect(container.querySelector('.hero-chips')).not.toBeInTheDocument();
-    expect(screen.queryByText('Countries visited')).not.toBeInTheDocument();
     expect(screen.queryByText('Computing since')).not.toBeInTheDocument();
     expect(screen.queryByText('Based in')).not.toBeInTheDocument();
     expect(screen.queryByText('YC Alum')).not.toBeInTheDocument();

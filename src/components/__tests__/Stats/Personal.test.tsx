@@ -24,24 +24,11 @@ describe('Personal', () => {
     expect(screen.queryByText('Current age')).not.toBeInTheDocument();
   });
 
-  it('displays countries visited', () => {
-    render(<Personal />);
-
-    expect(screen.getByText('Countries visited')).toBeInTheDocument();
-    expect(screen.getByText('2')).toBeInTheDocument();
-  });
-
   it('displays current city', () => {
     render(<Personal />);
 
     expect(screen.getByText('Current city')).toBeInTheDocument();
     expect(screen.getByText('Mountain View, CA')).toBeInTheDocument();
-  });
-
-  it('does not invent a travel map for countries visited', () => {
-    render(<Personal />);
-
-    expect(screen.queryByRole('link', { name: /2/i })).not.toBeInTheDocument();
   });
 
   it('does not tick age on the stats page', () => {

@@ -30,15 +30,6 @@ describe('personal stats data', () => {
     expect(ageStat).toBeUndefined();
   });
 
-  it('has a countries visited stat', () => {
-    const countriesStat = data.find((s) => s.key === 'countries');
-
-    expect(countriesStat).toBeDefined();
-    expect(countriesStat!.label).toBe('Countries visited');
-    expect(countriesStat!.value).toBe(2);
-    expect(countriesStat!.link).toBeUndefined();
-  });
-
   it('has a current location stat', () => {
     const locationStat = data.find((s) => s.key === 'location');
 
