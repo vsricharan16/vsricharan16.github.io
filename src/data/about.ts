@@ -1,8 +1,8 @@
 export const aboutMarkdown = `# Intro
 
-I am a software engineer with five years of experience architecting petabyte-scale storage control planes and data-path infrastructure. Today I am a Member of Technical Staff at Nutanix on the Core Data Path team. I primarily work in C++ with emphasis on performance and concurrency systems that serve millions of clients with low latency.
+I am a software engineer with five years of experience architecting petabyte-scale storage control planes and data-path infrastructure. Today I am a Senior Software Engineer at LinkedIn, building an exabyte-scale disaggregated storage platform. I primarily work in C++ with emphasis on performance and concurrency systems that serve millions of clients with low latency.
 
-Before this I built a serverless data-visualization platform at Amazon and alerting infrastructure at Sprinklr. I studied Computer Science at UC Irvine and IIT Hyderabad.
+Before this I worked at Nutanix on the Core Data Path team, built a serverless data-visualization platform at Amazon, and alerting infrastructure at Sprinklr. I studied Computer Science at UC Irvine and IIT Hyderabad.
 
 If you want to talk about storage, distributed systems, operating systems, databases, distributed inference, or collaborating, get in [touch](/contact).
 
@@ -15,7 +15,8 @@ If you want to talk about storage, distributed systems, operating systems, datab
 - I interned at [Amazon](https://www.amazon.jobs/content/en/teams/devices-and-services/lab126) in Sunnyvale on the Camera team.
 - After graduation I joined [Nutanix](https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute) on the Core Data Path team.
 - I took a short stint back at [Amazon](https://www.amazon.jobs/content/en/teams/devices-and-services/lab126) on the Audio team, building serverless tooling.
-- I returned to [Nutanix](https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute), where I work on disaggregated storage architecture: Nutanix AHV (hypervisor) compute nodes run virtualized workloads (VMs) whose persistent storage lives on qualified third-party SAN and NAS arrays.
+- I returned to [Nutanix](https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute), where I worked on disaggregated storage architecture: Nutanix AHV (hypervisor) compute nodes run virtualized workloads (VMs) whose persistent storage lives on qualified third-party SAN and NAS arrays.
+- I moved to [LinkedIn](https://engineering.linkedin.com/) to work on exabyte-scale storage problems.
 
 # I Like
 

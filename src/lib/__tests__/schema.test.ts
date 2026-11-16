@@ -113,7 +113,7 @@ describe('personNode', () => {
     const node = personNode();
     const worksFor = node.worksFor as Record<string, unknown>;
     expect(worksFor['@type']).toBe('Organization');
-    expect(worksFor.name).toBe('Nutanix');
+    expect(worksFor.name).toBe('LinkedIn');
     const alumniOf = node.alumniOf as Record<string, unknown>[];
     expect(alumniOf[0]['@type']).toBe('CollegeOrUniversity');
   });

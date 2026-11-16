@@ -18,20 +18,23 @@ describe('Hero', () => {
     expect(heading).toHaveTextContent('Sri Charan');
   });
 
-  it('describes the current work at Nutanix', () => {
+  it('describes the current work at LinkedIn', () => {
     const { container } = render(<Hero />);
 
-    const nutanixLink = screen.getByRole('link', { name: /nutanix/i });
-    expect(nutanixLink).toHaveAttribute('href', 'https://www.nutanix.com');
-    expect(nutanixLink).toHaveAttribute('target', '_blank');
-    expect(nutanixLink).toHaveClass('hero-highlight');
+    const employerLink = screen.getByRole('link', { name: /linkedin/i });
+    expect(employerLink).toHaveAttribute(
+      'href',
+      'https://engineering.linkedin.com/',
+    );
+    expect(employerLink).toHaveAttribute('target', '_blank');
+    expect(employerLink).toHaveClass('hero-highlight');
 
     expect(
       screen.queryByRole('link', { name: /core data path/i }),
     ).not.toBeInTheDocument();
 
     expect(container.querySelector('.hero-tagline')).toHaveTextContent(
-      "I'm a Member of Technical Staff at Nutanix, working at the intersection of distributed systems and storage. I tackle hard engineering problems to build petabyte-scale storage control planes and highly concurrent architectures where high throughput and ultra-low latency are critical. Whether I'm designing massive systems or just tinkering on my own time, I'm a C++ enthusiast at heart.",
+      "I'm a Senior Software Engineer at LinkedIn, working at the intersection of distributed systems and storage. I tackle hard engineering problems to build petabyte-scale storage control planes and highly concurrent architectures where high throughput and ultra-low latency are critical. Whether I'm designing massive systems or just tinkering on my own time, I'm a C++ enthusiast at heart.",
     );
   });
 
@@ -40,7 +43,6 @@ describe('Hero', () => {
 
     expect(container.querySelector('.telemetry')).not.toBeInTheDocument();
     expect(container.querySelector('.hero-chips')).not.toBeInTheDocument();
-    expect(screen.queryByText('Countries visited')).not.toBeInTheDocument();
     expect(screen.queryByText('Computing since')).not.toBeInTheDocument();
     expect(screen.queryByText('Based in')).not.toBeInTheDocument();
     expect(screen.queryByText('YC Alum')).not.toBeInTheDocument();

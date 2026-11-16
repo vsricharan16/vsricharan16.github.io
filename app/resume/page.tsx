@@ -36,12 +36,11 @@ export default function ResumePage() {
           <p className="resume-summary">
             Software engineer with 5 years of experience architecting scalable
             storage control planes, distributed data processing engines, and
-            latency-critical systems. Currently a Member of Technical Staff at
-            Nutanix on the Core Data Path team. Holds a Master&apos;s in
-            Computer Science from UC Irvine and a B.Tech from IIT Hyderabad,
-            with deep expertise in C++, distributed systems, storage internals,
-            Linux internals, concurrency, and high-performance systems
-            engineering.
+            latency-critical systems. Currently a Senior Software Engineer at
+            LinkedIn on the Core Storage team. Holds a Master&apos;s in Computer
+            Science from UC Irvine and a B.Tech from IIT Hyderabad, with deep
+            expertise in C++, distributed systems, storage internals, Linux
+            internals, concurrency, and high-performance systems engineering.
           </p>
           {/* Print-only, but real markup rather than CSS `content`, so it is
               selectable, linkable, and reads from the shared profile. The

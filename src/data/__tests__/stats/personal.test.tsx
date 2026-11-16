@@ -30,21 +30,12 @@ describe('personal stats data', () => {
     expect(ageStat).toBeUndefined();
   });
 
-  it('has a countries visited stat', () => {
-    const countriesStat = data.find((s) => s.key === 'countries');
-
-    expect(countriesStat).toBeDefined();
-    expect(countriesStat!.label).toBe('Countries visited');
-    expect(countriesStat!.value).toBe(2);
-    expect(countriesStat!.link).toBeUndefined();
-  });
-
   it('has a current location stat', () => {
     const locationStat = data.find((s) => s.key === 'location');
 
     expect(locationStat).toBeDefined();
     expect(locationStat!.label).toBe('Current city');
-    expect(locationStat!.value).toBe('San Jose, CA');
+    expect(locationStat!.value).toBe('Mountain View, CA');
   });
 
   it('keeps Age available for later without ticking it on the page', () => {

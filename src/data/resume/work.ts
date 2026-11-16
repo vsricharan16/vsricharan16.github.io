@@ -14,12 +14,21 @@ export interface Position {
 
 const work: Position[] = [
   {
+    name: 'LinkedIn',
+    position: 'Senior Software Engineer, Core Storage',
+    url: 'https://engineering.linkedin.com/',
+    logo: '/images/companies/linkedin.svg',
+    startDate: '2026-11-01',
+    summary: `Working on an exabyte-scale disaggregated storage platform.`,
+  },
+  {
     name: 'Nutanix',
     position: 'Member of Technical Staff, Core Data Path',
     url: 'https://www.nutanix.com/products/nutanix-cloud-infrastructure/compute',
     logo: '/images/companies/nutanix.svg',
     startDate: '2024-02-01',
-    summary: `Working on Curator, the MapReduce control plane for storage, now extended to run across disaggregated third-party arrays.`,
+    endDate: '2026-11-01',
+    summary: `Worked on Curator, the MapReduce control plane for storage, extending it to run across disaggregated third-party arrays.`,
     highlights: [
       'Engineered core distributed MapReduce control plane services, orchestrating storage workflows including deduplication, garbage collection, and collapsing long snapshot chains across dense multi-node clusters.',
       'Worked with a team of 4 engineers through end-to-end design and cross-functional delivery of disaggregated storage, integrating Nutanix AOS with external enterprise arrays (Pure, Dell, NetApp).',
