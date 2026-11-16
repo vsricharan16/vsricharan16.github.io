@@ -35,7 +35,7 @@ describe('Personal', () => {
     render(<Personal />);
 
     expect(screen.getByText('Current city')).toBeInTheDocument();
-    expect(screen.getByText('San Jose, CA')).toBeInTheDocument();
+    expect(screen.getByText('Mountain View, CA')).toBeInTheDocument();
   });
 
   it('does not invent a travel map for countries visited', () => {

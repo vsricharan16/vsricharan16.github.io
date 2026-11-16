@@ -17,9 +17,9 @@ export default function Hero() {
           <p className="hero-tagline">
             I&apos;m a {profile.role} at{' '}
             <a
-              href="https://www.nutanix.com"
+              href="https://www.linkedin.com"
               className="hero-highlight"
-              {...newTabProps('https://www.nutanix.com')}
+              {...newTabProps('https://www.linkedin.com')}
             >
               {profile.employer}
             </a>

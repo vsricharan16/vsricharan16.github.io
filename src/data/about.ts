@@ -1,8 +1,8 @@
 export const aboutMarkdown = `# Intro
 
-I am a software engineer with five years of experience architecting petabyte-scale storage control planes and data-path infrastructure. Today I am a Member of Technical Staff at Nutanix on the Core Data Path team. I primarily work in C++ with emphasis on performance and concurrency systems that serve millions of clients with low latency.
+I am a software engineer with five years of experience architecting petabyte-scale storage control planes and data-path infrastructure. Today I am a Senior Software Engineer at LinkedIn, building an exabyte-scale disaggregated storage platform. I primarily work in C++ with emphasis on performance and concurrency systems that serve millions of clients with low latency.
 
-Before this I built a serverless data-visualization platform at Amazon and alerting infrastructure at Sprinklr. I studied Computer Science at UC Irvine and IIT Hyderabad.
+Before this I worked at Nutanix on the Core Data Path team, built a serverless data-visualization platform at Amazon, and alerting infrastructure at Sprinklr. I studied Computer Science at UC Irvine and IIT Hyderabad.
 
 If you want to talk about storage, distributed systems, operating systems, databases, distributed inference, or collaborating, get in [touch](/contact).
 

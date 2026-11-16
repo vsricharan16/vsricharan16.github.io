@@ -39,7 +39,7 @@ export const SHARE_IMAGE_DIMENSIONS = {
 
 // Canonical one-line bio, shared across page metadata, OpenGraph, and JSON-LD.
 export const SITE_DESCRIPTION =
-  'Software engineer at Nutanix, building petabyte-scale storage control planes and data-path infrastructure.';
+  'Software engineer at LinkedIn, building exabyte-scale disaggregated storage infrastructure.';
 
 // Image dimension constants
 export const PROJECT_IMAGE = {

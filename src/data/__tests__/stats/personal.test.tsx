@@ -44,7 +44,7 @@ describe('personal stats data', () => {
 
     expect(locationStat).toBeDefined();
     expect(locationStat!.label).toBe('Current city');
-    expect(locationStat!.value).toBe('San Jose, CA');
+    expect(locationStat!.value).toBe('Mountain View, CA');
   });
 
   it('keeps Age available for later without ticking it on the page', () => {
