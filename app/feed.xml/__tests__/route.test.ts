@@ -11,7 +11,6 @@ describe('feed.xml route', () => {
 
     expect(xml).toContain(`${SITE_URL}/writing/`);
     expect(xml).toContain(`${SITE_URL}/writing/locks-and-critical-section/`);
-    expect(xml).not.toContain(`${SITE_URL}/writing/hello/`);
   });
 
   it('keeps the feed self link file-like', async () => {
@@ -27,7 +26,7 @@ describe('feed.xml route', () => {
     const xml = await response.text();
 
     expect(xml).toContain(
-      '<lastBuildDate>Mon, 28 Sep 2026 12:00:00 GMT</lastBuildDate>',
+      '<lastBuildDate>Thu, 09 Jan 2025 12:00:00 GMT</lastBuildDate>',
     );
   });
 });

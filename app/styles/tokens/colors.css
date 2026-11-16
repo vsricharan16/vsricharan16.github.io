@@ -64,6 +64,14 @@
   --color-surface-hover: rgba(35, 39, 46, 0.06);
   --color-fg-muted: rgba(35, 39, 46, 0.55);
 
+  /* Code — distinct from accent-as-link and never amber. Amber is a live
+     reading; a keyword is just syntax. */
+  --color-code-keyword: #1b2fbf;
+  --color-code-type: #0e1116;
+  --color-code-string: #2c6b4a;
+  --color-code-number: #7c4a16;
+  --color-code-comment: var(--color-fg-light);
+
   /* ===================
      SEMANTIC COLORS
      =================== */

@@ -2,8 +2,13 @@
 
 import Markdown from 'markdown-to-jsx';
 import Image from 'next/image';
+import { Fragment } from 'react';
 
 import MarkdownLink from '@/components/MarkdownLink';
+import { splitPostContent } from '@/lib/codeFences';
+
+import CodeBlock from './CodeBlock';
+import CodeTabs, { CodeLangProvider } from './CodeTabs';
 
 interface PostContentProps {
   content: string;
@@ -22,13 +27,17 @@ function isRootLocalImage(src: string): boolean {
   return src.startsWith('/') && !src.startsWith('//');
 }
 
-export default function PostContent({
+function MarkdownChunk({
   content,
-  imageSizes = {},
-}: PostContentProps) {
+  imageSizes,
+}: {
+  content: string;
+  imageSizes: Record<string, { width: number; height: number }>;
+}) {
   return (
     <Markdown
       options={{
+        wrapper: Fragment,
         overrides: {
           a: { component: MarkdownLink },
           img: {
@@ -65,5 +74,40 @@ export default function PostContent({
     >
       {content}
     </Markdown>
+  );
+}
+
+export default function PostContent({
+  content,
+  imageSizes = {},
+}: PostContentProps) {
+  const segments = splitPostContent(content);
+
+  return (
+    <CodeLangProvider>
+      {segments.map((segment, index) => {
+        if (segment.type === 'markdown') {
+          return (
+            <MarkdownChunk
+              key={`markdown-${index}`}
+              content={segment.text}
+              imageSizes={imageSizes}
+            />
+          );
+        }
+
+        if (segment.type === 'tabs') {
+          return <CodeTabs key={`tabs-${index}`} panes={segment.panes} />;
+        }
+
+        return (
+          <CodeBlock
+            key={`code-${index}`}
+            language={segment.language}
+            code={segment.code}
+          />
+        );
+      })}
+    </CodeLangProvider>
   );
 }

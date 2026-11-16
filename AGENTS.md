@@ -92,6 +92,8 @@ Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Biome ·
 - **Profile copy**: Keep role/bio updates in sync across `src/components/Template/Hero.tsx`, `app/layout.tsx` metadata, `src/data/about.ts`, and `src/data/resume/work.ts` so homepage copy, SEO, schema, and resume stay aligned
 - **Long-form markdown pages**: Prefer a dedicated renderer component that can parse markdown into semantic sections instead of styling raw headings globally; if `markdown-to-jsx` causes dev/runtime issues in App Router, a `'use client'` boundary may still be required even without hooks. Preserve stable heading ids when converting markdown headings so deep links and `scroll-margin-top` behavior keep working, prefer a shared helper over duplicating slug logic in each page component, and expose those anchors with section nav if readers are expected to use them
 - **Blog posts**: Markdown files in `content/writing/` with frontmatter (title, date, description); slug derived from filename
+- **Code samples in posts**: Consecutive fenced blocks tagged `cpp`, `python`, and `java` become one example with those languages as headers. Click selects; the default is C++, and every sample on the page stays in sync. Keep every language in the DOM behind `hidden` so print can restore them. A second C++ fence in a row is a new sample, not a tab. A post that stays in one language is a sequence of single fences and does not need placeholder translations. Highlighting is the small tokenizer in `src/lib/highlight.ts` — ink plus the accent, not an editor palette. Do not add a highlighter package for these three languages
+- **C++ sample structure**: For any class- or struct-based C++ sample, declare the interface before implementing it — private data members and member-function signatures first, each with a short comment stating what it does and its invariant, then the definitions below (out-of-line, or in a clearly separated block). The reader should be able to see the shape of the type and what every method promises before meeting the bodies. Use comments to explain non-obvious steps. Free-function samples do not need a class wrapper, but still lead with a one-line intent comment. This applies to the C++ tab only; the `python`/`java` tabs mirror behaviour idiomatically and are not forced into the same declare-then-define split
 - **Writing page**: Add external links in `src/data/writing.ts` and keep dated entries sorted newest first; local posts still live in `content/writing/`
 - **Design system**: Three type roles, and every element should pick one deliberately: `--font-display` (Source Serif 4) for names and page titles, `--font-body` (Inter) for prose, navigation, section indexes, and buttons, and `--font-mono` (JetBrains Mono) for code and measured data. Structure is carried by hairlines (`--rule`) and near-square radii, not by shadow and float. A heavy `--color-fg-bold` rule opens a section; a `--color-border` hairline divides within one
 - **Page measures are semantic**: use `--measure-wide` for split hero compositions and the footer row, `--measure-page` for default pages/lists, and `--measure-read` for continuous prose and compact data views. Component constraints such as portraits, controls, and short status messages may still use their own intrinsic measure; do not create a new page width for each route
@@ -128,3 +130,13 @@ npm test -- ComponentName       # Run specific test
 ## Maintaining This Document
 
 When creating a PR, audit this file and make small, targeted improvements based on your learnings—new patterns discovered, outdated references, or missing guidance that would have helped.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

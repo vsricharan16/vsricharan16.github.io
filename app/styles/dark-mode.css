@@ -49,6 +49,12 @@
   --color-surface-hover: rgba(255, 255, 255, 0.07);
   --color-fg-muted: rgba(255, 255, 255, 0.5);
 
+  --color-code-keyword: #8098ff;
+  --color-code-type: #f2f4f7;
+  --color-code-string: #8fcea8;
+  --color-code-number: #d0a070;
+  --color-code-comment: var(--color-fg-light);
+
   /* Shadows */
 }
 

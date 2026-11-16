@@ -26,6 +26,11 @@
     --color-border-bg: rgba(0, 0, 0, 0.18);
     --color-surface-subtle: transparent;
     --color-surface-hover: transparent;
+    --color-code-keyword: #000;
+    --color-code-type: #000;
+    --color-code-string: #000;
+    --color-code-number: #000;
+    --color-code-comment: #333;
   }
 
   @page {
@@ -56,7 +61,8 @@
   .resume-nav,
   .hero-bg,
   .writing-rss-link,
-  .about-section-nav {
+  .about-section-nav,
+  .code-tabs-toolbar {
     display: none !important;
   }
 
@@ -214,6 +220,27 @@
 
   .skill-group[hidden] {
     display: block !important;
+  }
+
+  /* Same pattern as skills: inactive language panes stay in the DOM so a
+     printed post is not whatever the last dropdown choice was. */
+  .code-tabs-pane[hidden] {
+    display: block !important;
+  }
+
+  .code-tabs-pane + .code-tabs-pane {
+    border-top: var(--rule) solid var(--color-border);
+  }
+
+  .code-tabs-pane::before {
+    content: attr(data-language);
+    display: block;
+    font-family: var(--font-body);
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0.75rem 0 0.25rem;
   }
 
   .skill-tag,

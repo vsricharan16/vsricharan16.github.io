@@ -8,6 +8,8 @@ export interface WritingItem {
   description: string;
   isExternal: boolean;
   source: string;
+  /** Topic tags; always an array, empty when the entry declares none. */
+  tags: string[];
 }
 
 /** Stable newest-first order; undated guides sort by title at the end. */
@@ -42,12 +44,14 @@ export function getWritingItems(): WritingItem[] {
     date: post.date,
     description: post.description,
     isExternal: false,
-    source: 'On this site',
+    source: '',
+    tags: post.tags,
   }));
   const external: WritingItem[] = externalWriting.map((item) => ({
     ...item,
     isExternal: true,
     source: externalSource(item.url),
+    tags: item.tags ?? [],
   }));
 
   return [...internal, ...external].sort(compareWritingItems);
